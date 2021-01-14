@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Folder
+./checkpoints/*
+./Data
+./Data
+
+# File
+./result.png
+./test.png

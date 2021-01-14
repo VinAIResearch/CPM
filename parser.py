@@ -3,12 +3,10 @@ import argparse
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--checkpoints_alpha', default = './pretrained_seg/alpha.pth', type=str)
-#     parser.add_argument('--checkpoints_skin', default = '/home/ubuntu/pretrained_seg/1alpha.pth', type=str)
-    parser.add_argument('--checkpoints_mkup', default = './G.pth', type=str)
-    
+    parser.add_argument('--checkpoint_pattern', default = './checkpoints/pattern.pth', type=str)
+    parser.add_argument('--checkpoint_color', default = './checkpoints/color.pth', type=str)
+
     parser.add_argument('--output_path', default = '/home/ubuntu/checkpoints', type = str)
-    
     parser.add_argument('--device', default = 'cuda', type = str)
     parser.add_argument('--classes', nargs='+', type=str, default = [1])
     
@@ -19,10 +17,14 @@ def get_args():
     
     parser.add_argument('--batch_size', default = '1', type = int)
     parser.add_argument('--prn', default = True, type=bool)
-    parser.add_argument('--mkup', default = True, action='store_false')
+    parser.add_argument('--color_only', default = False, action='store_true')
+    parser.add_argument('--pattern_only', default = False, action='store_true')
     
-    parser.add_argument('--path', type=str, default = '/vinai/thaontp79/cvpr2021/imgs4vis/itw')
-    parser.add_argument('--savedir', type=str, default = '/vinai/thaontp79/cvpr2021/qualitative/my/itw')
+    # parser.add_argument('--path', type=str, default = '.')
+    parser.add_argument('--savedir', type=str, default = '.')
+    parser.add_argument('--input', type=str, default = './imgs/non-makeup.png', help='Path to input image (non-makeup)')
+    parser.add_argument('--style', type=str, default = './imgs/style-2.png', help='Path to style image (makeup style | reference image)')
+    parser.add_argument('--alpha', type=float, default = 0.7, help='opacity of color makeup')
 
     args = parser.parse_args()
     

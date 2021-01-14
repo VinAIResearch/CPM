@@ -2,10 +2,9 @@ import tensorflow as tf
 from PIL import Image
 import torch, cv2, os
 import numpy as np
-# import segmentation_models_pytorch as smp
 from utils.utils import get_preprocessing, to_tensor
 from parser import get_args
-# from models import Segmentor
+from models import Segmentor
 import numpy as np
 import os, glob, cv2
 from skimage.io import imread, imsave
@@ -41,28 +40,19 @@ def to_var(x, requires_grad=True):
     
 class Makeup():
     def __init__(self, args):
-#         self.prn = PRN(is_dlib=True)
-        self.segmentor_alpha = Segmentor(args)
-#         self.segmentor_skins = Segmentor(args)
-        self.segmentor_alpha.test_model(args.checkpoints_alpha)
-#         self.segmentor_skins.test_model(args.checkpoints_skin)
-        #-- mkup
-        if args.mkup:
-            self.mkup = net.Generator_branch(64, 6)
-            self.mkup.load_state_dict(torch.load(args.checkpoints_mkup))
-            self.mkup.eval()
+        # if args.pattern:
+        self.pattern = Segmentor(args)
+        self.pattern.test_model(args.checkpoint_pattern)
+        self.color = net.Generator_branch(64, 6).cuda()
+        self.color.load_state_dict(torch.load(args.checkpoint_color))
+        self.color.eval()
         if args.prn:
             self.prn = PRN(is_dlib=True)
         
-    def get_mask(self, img, cls = 'alpha'):
+    def get_mask(self, img):
         x_tensor = to_tensor(img/255)
         x_tensor = torch.from_numpy(x_tensor).unsqueeze(0).cuda()
-        if cls == 'alpha':
-            pr_mask = self.segmentor_alpha.model.predict(x_tensor)
-        elif cls == 'skin':
-            pr_mask = self.segmentor_skins.model.predict(x_tensor)
-        else:
-            pr_mask = np.zeros_like(x_tensor)
+        pr_mask = self.pattern.model.predict(x_tensor)
         pr_mask = pr_mask[0, 0, :, :].detach().cpu().numpy()
         return pr_mask
     
@@ -73,13 +63,12 @@ class Makeup():
         img_B = transform(Image.fromarray(img_B))
         img_A = img_A[None, :, :, :]
         img_B = img_B[None, :, :, :]
-        real_org = to_var(img_A)
-        real_ref = to_var(img_B)
+        real_org = to_var(img_A).cuda()
+        real_ref = to_var(img_B).cuda()
 
         # Get makeup result
-        fake_A, fake_B = self.mkup(real_org, real_ref)
-        rec_B, rec_A = self.mkup(fake_B, fake_A)
-        result = de_norm(fake_A.detach()[0]).numpy().transpose(1, 2, 0)
+        fake_A, fake_B = self.color(real_org, real_ref)
+        result = de_norm(fake_A.detach()[0]).cpu().numpy().transpose(1, 2, 0)
         result = cv2.resize(result, (256, 256), cv2.INTER_CUBIC)
         return result
 
@@ -135,13 +124,12 @@ class Makeup():
         new_colors = self.prn.get_colors_from_texture(texture)
         new_image = render_by_tri(new_colors.T, self.triangles.T, self.weights, self.dst_triangle_buffer, self.h, self.w, c = 3)
         new_face = self.face_mask[:, :, np.newaxis]*new_image + (1-self.face_mask[:, :, np.newaxis])*self.face/255
-    
         if patt_only:
             return new_face
         else:
             return new_image
 
-    def blend_imgs(self, source, reference, blend_mode = 'normal', alpha=0.9):
+    def blend_imgs(self, source, reference, blend_mode = 'normal', alpha=0.8):
         """
         """
         # blurred_mask = cv2.GaussianBlur(np.stack([self.face_mask, self.face_mask, self.face_mask], axis=2)*255, (25, 25), 0)
@@ -165,7 +153,7 @@ class Makeup():
         elif blend_mode == 'hard_light':
             blended_img = hard_light(source.astype('float'), refer.astype('float'), alpha).astype('uint8')
         # Image.fromarray(np.concatenate([source.astype('uint8'), blended_img[:, :, :3], tar.astype('uint8')], axis=1))
-        return blended_img
+        return blended_img[:, :, :3]
 
     def get_blur_mask(self, source_seg):
         seg = cv2.resize(source_seg, (256, 256), interpolation=cv2.INTER_NEAREST)

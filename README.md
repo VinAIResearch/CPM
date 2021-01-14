@@ -13,9 +13,6 @@
 	- [Quick Start (Usage)](#usage)
 1. [About Data](#about-data)
 1. [Training/ Test](#train-&-test)
-	- Color Makeup Branch (CM)
-	- Pattern Makeup Branch (CP)
-
 1. [Common Issues](#common-issues)
 
 ---
@@ -36,11 +33,16 @@ wget color.pth
 wget pattern.pth
 ```
 
+- Download PRNet 
+
 ##### Usage
 
-- Color Makeup Transfer: `python main.py --color`
+- Color+Pattern: `python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png`
+- Color Only: `python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --color_only`
+- Pattern Only: `python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --pattern_only`
 
-- Result image will be saved in `result.png`
+Result image will be saved in `result.png` ()
+
 
 1. Pattern Makeup Transfer
 
@@ -52,7 +54,7 @@ wget pattern.pth
 
 ### Train & Test
 
-Redirection to [Color Branch]() and [Pattern Branch]()
+Redirection to [Color Branch](./Color/README.md) and [Pattern Branch](./Pattern/README.md)
 
 
 ---
@@ -70,15 +72,16 @@ sudo apt install libgl1-mesa-glx
 
 1. [Solved] `RuntimeError: Expected tensor for argument #1 'input' to have the same device as tensor for argument #2 'weight'; but device 1 does not equal 0 (while checking arguments for cudnn_convolution)`
 
-Change to `CUDA_VISIBLE_DEVICES=0 python main.py --pattern_only --style ./imgs/style-1.png`
+Add CUDA VISIBLE DEVICES `CUDA_VISIBLE_DEVICES=0 python main.py`
 
 ##### Checklists
 
-1. To-do
+**To-do**
+
 - [ ] Usage
 	- [x] Color
-	- [ ] Pattern
-	- [ ] C+P
+	- [x] Pattern
+	- [x] C+P
 	- [ ] Partial
 - [ ] Train/ Test
 	- [ ] Color
@@ -87,11 +90,14 @@ Change to `CUDA_VISIBLE_DEVICES=0 python main.py --pattern_only --style ./imgs/s
 	- [ ] ITW
 	- [ ] Sticker
 	- [ ] Create Synthesis Pipeline
-1. Issues
+
+**Issues**: ⚠️: important
+
 - [ ] Check cuda() is available else cpu
+- [ ] ⚠️ (Usage) blend_mode mask return noticable artifacts!!
 
 ---
 
 ##### Acknowledgements
 
-Big thanks to [YadiraF (PRNet)](https://github.com/YadiraF/PRNet), [qubvel (segmentation_models.pytorch)](https://github.com/qubvel/segmentation_models.pytorch) and [wtjiang98 (BeautyGAN Pytorch)](https://github.com/wtjiang98/BeautyGAN_pytorch) for making theirs works publicly available.
+Big thanks to [YadiraF (PRNet)](https://github.com/YadiraF/PRNet), [qubvel (segmentation_models.pytorch)](https://github.com/qubvel/segmentation_models.pytorch), and [wtjiang98 (BeautyGAN Pytorch)](https://github.com/wtjiang98/BeautyGAN_pytorch) for making theirs works publicly available.

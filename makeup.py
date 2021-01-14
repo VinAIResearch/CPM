@@ -123,11 +123,11 @@ class Makeup():
     def render_texture(self, texture, patt_only=False):
         new_colors = self.prn.get_colors_from_texture(texture)
         new_image = render_by_tri(new_colors.T, self.triangles.T, self.weights, self.dst_triangle_buffer, self.h, self.w, c = 3)
-        new_face = self.face_mask[:, :, np.newaxis]*new_image + (1-self.face_mask[:, :, np.newaxis])*self.face/255
-        if patt_only:
-            return new_face
-        else:
-            return new_image
+        # new_face = self.face_mask[:, :, np.newaxis]*new_image + (1-self.face_mask[:, :, np.newaxis])*self.face/255
+        # if patt_only:
+        #     return new_face
+        # else:
+        return new_image
 
     def blend_imgs(self, source, reference, blend_mode = 'normal', alpha=0.8):
         """

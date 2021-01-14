@@ -3,24 +3,20 @@ from PIL import Image
 import numpy as np
 from parser import get_args
 from makeup import Makeup
-import time
 
 def color_makeup(A_txt, B_txt, alpha):
-	color = model.makeup(A_txt, B_txt)
-	color = model.render_texture(rs)
-	color = model.blend_imgs(model.face, rs*255, alpha=alpha)
+	color_txt = model.makeup(A_txt, B_txt)
+	color = model.render_texture(color_txt)
+	color = model.blend_imgs(model.face, color*255, alpha=alpha)
 	return color
 
-def pattern_makeup(A_txt, B_txt, return_mask = False):
+def pattern_makeup(A_txt, B_txt, render_texture = False):
 	mask = model.get_mask(B_txt)
 	mask = (mask>0.0001).astype('uint8')
-	pattern = A_txt*(1-mask)[:, :, np.newaxis] + B_txt*mask[:, :, np.newaxis]
-	pattern = model.render_texture(pattern)
+	pattern_txt = A_txt*(1-mask)[:, :, np.newaxis] + B_txt*mask[:, :, np.newaxis]
+	pattern = model.render_texture(pattern_txt)
 	pattern = model.blend_imgs(model.face, pattern, alpha=1)
-	if return_mask:
-		return pattern, mask
-	else:
-		return pattern
+	return pattern
 
 if __name__ == '__main__':
 	args = get_args()
@@ -39,9 +35,13 @@ if __name__ == '__main__':
 	elif args.pattern_only:
 		output = pattern_makeup(A_txt, B_txt)
 	else:
-		color = color_makeup(A_txt, B_txt, args.alpha)
-		pattern, mask = pattern_makeup(A_txt, B_txt, return_mask = True)
-		output = color*(1-mask[:, :, np.newaxis])+pattern*mask[:, :, np.newaxis]
+		color_txt = model.makeup(A_txt, B_txt)*255
+		mask = model.get_mask(B_txt)
+		mask = (mask>0.0001).astype('uint8')
+		new_txt = color_txt*(1-mask)[:, :, np.newaxis] + B_txt*mask[:, :, np.newaxis]
+		output = model.render_texture(new_txt)
+		output = model.blend_imgs(model.face, output, alpha=1)
+
 	x2, y2, x1, y1 = model.location_to_crop()
 	output = np.concatenate([imgB[x2:], model.face[x2:], output[x2:]], axis=1)
 	Image.fromarray((output).astype('uint8')).save(os.path.join(args.savedir, 'result.png'))

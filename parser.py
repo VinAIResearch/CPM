@@ -20,11 +20,10 @@ def get_args():
     parser.add_argument('--color_only', default = False, action='store_true')
     parser.add_argument('--pattern_only', default = False, action='store_true')
     
-    # parser.add_argument('--path', type=str, default = '.')
-    parser.add_argument('--savedir', type=str, default = '.')
     parser.add_argument('--input', type=str, default = './imgs/non-makeup.png', help='Path to input image (non-makeup)')
     parser.add_argument('--style', type=str, default = './imgs/style-2.png', help='Path to style image (makeup style | reference image)')
     parser.add_argument('--alpha', type=float, default = 0.7, help='opacity of color makeup')
+    parser.add_argument('--savedir', type=str, default = '.')
 
     args = parser.parse_args()
     

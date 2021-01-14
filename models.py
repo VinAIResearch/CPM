@@ -28,14 +28,7 @@ class Segmentor():
                      activation=args.activation)
         
         self.preprocessing_fn = smp.encoders.get_preprocessing_fn(args.encoder, args.encoder_weights)
-        # Dice/F1 score - https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
-        # IoU/Jaccard score - https://en.wikipedia.org/wiki/Jaccard_index
-
         self.loss = smp.utils.losses.DiceLoss()
-        # self.loss = smp.utils.losses.MSELoss()
-        # weight[y.data.view(-1).long()].view_as(y)
-        # self.loss = smp.utils.losses.BCELoss(weight=torch.tensor([20]).cuda())
-        # self.loss = smp.utils.losses.OhemCrossEntropy()
         self.metrics = [smp.utils.metrics.IoU(threshold=0.5),
                         smp.utils.metrics.Accuracy(threshold=0.5),
                         smp.utils.metrics.Precision(),

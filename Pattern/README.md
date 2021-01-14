@@ -1,6 +1,6 @@
 # Pattern Makeup - Training Guideline
 
-This is training guideline for Pattern Branch (**P**), one out of two branches in [Color-Pattern Makeup Transfer (C**P**M)](https://github.com/VinAIResearch/CPM/tree/main/Color).
+This is training guideline for Pattern Branch (P), one out of two branches in [Color-Pattern Makeup Transfer (CPM)](../).
 
 ### Requirements
 

@@ -49,13 +49,6 @@ Result image will be saved in `result.png` (style | original image | result)
 
 We introduce ✨ 4 new datasets: CPM-Real, CPM-Synt-1, CPM-Synt-2, and Stickers datasets. Besides, we also use published [LADN's Dataset](https://georgegu1997.github.io/LADN-project-page/) & [Makeup Transfer Dataset](http://liusi-group.com/projects/BeautyGAN).
 
-|    Name  						  | #imgs | Description						   | - 									|
-|:-------------------------------:|:-----:|:-----------------------------------|:----------------------------------:|
-|[CPM-Real](./readme-about-data.md)| 3895  | real - makeup styles 			   |![CPM-Real.png](./imgs/CPM-Real.png)|
-|[CPM-Synt-1](./readme-about-data.md)| 5555| synthesis - makeup img with pattern segmentation mask|![./imgs/CPM-Synt-1.png](./imgs/CPM-Synt-1.png)|
-|[CPM-Synt-2](./readme-about-data.md)| 1625| synthesis - triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
-|[Stickers](./readme-about-data.md)|577| high-quality transparent imgs, used to create CPM-Synt-1/2 |![Stickers.png](./imgs/Stickers.png)|
-
 Please refer to [readme-about-data.md](./readme-about-data.md) for downloading these datasets.
 
 ---

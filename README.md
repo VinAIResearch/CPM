@@ -47,6 +47,17 @@ Result image will be saved in `result.png` (style | original image | result)
 
 ### About Data
 
+We introduce 4 **new** datasets: CPM-Real, CPM-Synt-1, CPM-Synt-2, and Stickers datasets. Besides, we also use published [LADN's Dataset](https://georgegu1997.github.io/LADN-project-page/) & [Makeup Transfer Dataset](http://liusi-group.com/projects/BeautyGAN).
+
+|    Name  						  | #imgs | Description						   | - 									|
+|:-------------------------------:|:-----:|:-----------------------------------|:----------------------------------:|
+|[CPM-Real] hyperlink will be here| 3895  | real / makeup styles 			   |![CPM-Real.png](./imgs/CPM-Real.png)|
+|[CPM-Synt-1] hyperlink will be here| 5555| synthesis / makeup img with pattern segmentation mask|![./imgs/CPM-Synt-1.png](./imgs/CPM-Synt-1.png)|
+|[CPM-Synt-2] hyperlink will be here| 1625| synthesis / triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
+|[Stickers] hyperlink will be here| ?  | high-quality transparent imgs, used to create CPM-Synt-1/2 |![Stickers.png](./imgs/Stickers.png)|
+
+
+
 ---
 
 ### Train & Test
@@ -57,7 +68,7 @@ As stated in the paper, the Color Branch and Pattern Branch are totally independ
 1. Data preparation: Use [PRNet](https://github.com/YadiraF/PRNet) to generate texture_map of faces.
 1. Training
 
-Please redirect to [Color Branch](./Color) or [Pattern Branch](./Pattern) for further details
+Please redirect to [Color Branch 🇨](./Color) or [Pattern Branch 🇵](./Pattern) for further details
 
 ---
 

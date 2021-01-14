@@ -1,6 +1,6 @@
 # Color Makeup - Training Guideline
 
-This is training guideline for Color Branch (C), one out of two branches in Color-Pattern Makeup Transfer (CPM).
+This is training guideline for Color Branch (**C**), one out of two branches in [Color-Pattern Makeup Transfer (**C**PM)](https://github.com/VinAIResearch/CPM/).
 
 ### Requirements
 
@@ -8,9 +8,11 @@ This is training guideline for Color Branch (C), one out of two branches in Colo
 
 - Download [BeautyGAN](http://liusi-group.com/projects/BeautyGAN)'s [Makeup Transfer Dataset](https://drive.google.com/file/d/18UlvYDL6UGZ2rs0yaDsSzoUlw8KI5ABY/view)). This dataset contains 3834 images (makeup | non-makeup) with theirs facial segmentation mask.
 
-- Run `prepare.py` to get texture map ạ mouahhh 
+- Run `prepare.py` to get texture map ạ mouahhh
 
 ### Training
+
+- Run 
 
 ### Acknowledgements
 

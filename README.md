@@ -41,10 +41,7 @@ wget pattern.pth
 - Color Only: `python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --color_only`
 - Pattern Only: `python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --pattern_only`
 
-Result image will be saved in `result.png` ()
-
-
-1. Pattern Makeup Transfer
+Result image will be saved in `result.png` (style | original image | result)
 
 ---
 
@@ -54,12 +51,17 @@ Result image will be saved in `result.png` ()
 
 ### Train & Test
 
-Redirection to [Color Branch](./Color/README.md) and [Pattern Branch](./Pattern/README.md)
 
+As stated in the paper, the Color Branch and Pattern Branch are totally independent. Yet, they shared the same workflow:
+
+1. Data preparation: Use [PRNet](https://github.com/YadiraF/PRNet) to generate texture_map of faces.
+1. Training
+
+Please redirect to [Color Branch](./Color) or [Pattern Branch](./Pattern) for further details
 
 ---
 
-##### Common Issues
+### Common Issues
 
 1. [Solved] `ImportError: libGL.so.1: cannot open shared object file: No such file or directory`:
 
@@ -67,16 +69,15 @@ Redirection to [Color Branch](./Color/README.md) and [Pattern Branch](./Pattern/
 ```
 sudo apt update
 sudo apt install libgl1-mesa-glx
-
 ```
 
 1. [Solved] `RuntimeError: Expected tensor for argument #1 'input' to have the same device as tensor for argument #2 'weight'; but device 1 does not equal 0 (while checking arguments for cudnn_convolution)`
 
 Add CUDA VISIBLE DEVICES `CUDA_VISIBLE_DEVICES=0 python main.py`
 
-##### Checklists
+### Update Log 
 
-**To-do**
+##### Checklist
 
 - [ ] Usage
 	- [x] Color
@@ -91,13 +92,15 @@ Add CUDA VISIBLE DEVICES `CUDA_VISIBLE_DEVICES=0 python main.py`
 	- [ ] Sticker
 	- [ ] Create Synthesis Pipeline
 
-**Issues**: ⚠️: important
+##### Issues
 
-- [ ] Check cuda() is available else cpu
-- [ ] ⚠️ (Usage) blend_mode mask return noticable artifacts!!
+⚠️: important
+
+- [ ] [usage] check cuda() is available else cpu
+- [ ] ⚠️ [usage] blend_mode mask return noticable artifacts!!
 
 ---
 
-##### Acknowledgements
+### Acknowledgements
 
 Big thanks to [YadiraF (PRNet)](https://github.com/YadiraF/PRNet), [qubvel (segmentation_models.pytorch)](https://github.com/qubvel/segmentation_models.pytorch), and [wtjiang98 (BeautyGAN Pytorch)](https://github.com/wtjiang98/BeautyGAN_pytorch) for making theirs works publicly available.

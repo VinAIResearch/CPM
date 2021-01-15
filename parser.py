@@ -27,4 +27,3 @@ def get_args():
 
 if __name__ == "__main__":
     get_args()
-    

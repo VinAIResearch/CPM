@@ -21,21 +21,21 @@ class PRN:
         #---- load detectors
         if is_dlib:
             import dlib
-            detector_path = os.path.join(prefix, 'Data/net-data/mmod_human_face_detector.dat')
+            detector_path = os.path.join(prefix, 'PRNet/net-data/mmod_human_face_detector.dat')
             self.face_detector = dlib.cnn_face_detection_model_v1(detector_path)
 
         #---- load PRN 
         self.pos_predictor = PosPrediction(self.resolution_inp, self.resolution_op)
-        prn_path = os.path.join(prefix, 'Data/net-data/256_256_resfcn256_weight')
+        prn_path = os.path.join(prefix, 'PRNet/net-data/256_256_resfcn256_weight')
         if not os.path.isfile(prn_path + '.data-00000-of-00001'):
             print("please download PRN trained model first.")
             exit()
         self.pos_predictor.restore(prn_path)
 
         # uv file
-        self.uv_kpt_ind = np.loadtxt(prefix + '/Data/uv-data/uv_kpt_ind.txt').astype(np.int32) # 2 x 68 get kpt
-        self.face_ind = np.loadtxt(prefix + '/Data/uv-data/face_ind.txt').astype(np.int32) # get valid vertices in the pos map
-        self.triangles = np.loadtxt(prefix + '/Data/uv-data/triangles.txt').astype(np.int32) # ntri x 3
+        self.uv_kpt_ind = np.loadtxt(prefix + '/PRNet/uv-data/uv_kpt_ind.txt').astype(np.int32) # 2 x 68 get kpt
+        self.face_ind = np.loadtxt(prefix + '/PRNet/uv-data/face_ind.txt').astype(np.int32) # get valid vertices in the pos map
+        self.triangles = np.loadtxt(prefix + '/PRNet/uv-data/triangles.txt').astype(np.int32) # ntri x 3
         
         self.uv_coords = self.generate_uv_coords()        
 

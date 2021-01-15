@@ -12,7 +12,7 @@
 	- [Requirements](#requirements)
 	- [Quick Start (Usage)](#usage)
 1. [About Data](#about-data)
-1. [Training/ Test](#train-&-test)
+1. [Train & Test](#train---test)
 1. [Common Issues](#common-issues)
 
 ---
@@ -21,20 +21,14 @@
 
 ##### Requirements
 
-- Install packages
-
-`conda env create -f environment.yml`
-
-- Download pretrained models:
-
-```
-mkdir checkpoints
-wget color.pth
-wget pattern.pth
-```
-
-- Download PRNet 
-
+1. Clone the repo:
+	```
+	git clone https://github.com/VinAIResearch/CPM.git
+	cd CPM
+	```
+1. Install packages `conda env create -f environment.yml`
+1. Download Makeup pretrained models from [Drive](https://drive.google.com/drive/folders/1dagiuultGgDd_QNikMTrNlmCmWEaFV_N?usp=sharing). They are `pattern.pth` and `color.pth`. Put them in `checkpoints` folder.
+1. Download [PRNet pretrained model] from [Drive](https://drive.google.com/file/d/1UoE-XuW1SDLUjZmJPkIZ1MLxvQFgmTFH/view). Put it in `PRNet/net-data`
 ##### Usage
 
 - Color+Pattern: `python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png`
@@ -61,7 +55,7 @@ As stated in the paper, the Color Branch and Pattern Branch are totally independ
 1. Data preparation: Use [PRNet](https://github.com/YadiraF/PRNet) to generate texture_map of faces.
 1. Training
 
-Please redirect to [Color Branch 🇨](./Color) or [Pattern Branch 🇵](./Pattern) for further details
+Please redirect to [Color Branch 🇨](./Color) or [Pattern Branch 🇵](./Pattern) for further details.
 
 ---
 

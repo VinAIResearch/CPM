@@ -85,7 +85,7 @@ class Makeup():
         self.face_mask = np.squeeze(face_mask > 0).astype(np.float32)
         self.weights, self.dst_triangle_buffer = prepare_tri_weights(self.vertices.T, self.triangles.T, self.h, self.w)
         
-        uv_face_eye = np.array(Image.open('./Data/uv-data/uv_face_eyes.png'))[:, :, :3]/255
+        uv_face_eye = np.array(Image.open('./PRNet/uv-data/uv_face_eyes.png'))[:, :, :3]/255
         new_colors = self.prn.get_colors_from_texture(uv_face_eye)
         new_colors = (new_colors>0).astype('uint8')
         mask_out_eye = render_by_tri(new_colors.T, self.triangles.T, self.weights, self.dst_triangle_buffer, self.h, self.w, c = 3)
@@ -105,8 +105,8 @@ class Makeup():
         face_mask = np.squeeze(face_mask > 0).astype(np.float32)
         weights, dst_triangle_buffer = prepare_tri_weights(vertices.T, triangles.T, h, w)
         
-        uv_face_eye = cv2.imread('./Data/uv-data/uv_face_eyes.png')[:, :, 0]/255. 
-        uv_face = cv2.imread('./Data/uv-data/uv_face.png')[:, :, 0]/255.
+        uv_face_eye = cv2.imread('./PRNet/uv-data/uv_face_eyes.png')[:, :, 0]/255. 
+        uv_face = cv2.imread('./PRNet/uv-data/uv_face.png')[:, :, 0]/255.
         eye_mask = (abs(uv_face_eye - uv_face) > 0).astype(np.float32)
         texture = cv2.remap(face, pos[:,:,:2].astype(np.float32), None, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(0))
         tf.reset_default_graph()

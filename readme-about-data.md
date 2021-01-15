@@ -2,7 +2,7 @@
 
 We introduce ✨ 4 new datasets: CPM-Real, CPM-Synt-1, CPM-Synt-2, and Stickers.
 
-CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2 are build on [Makeup Transfer](http://liusi-group.com/projects/BeautyGAN) and Sticker.
+CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2 are build on [Makeup Transfer](http://liusi-group.com/projects/BeautyGAN) and Stickers.
 
 |    Name  						  | #imgs | Description						   | - 									|
 |:-------------------------------:|:-----:|:-----------------------------------|:----------------------------------:|

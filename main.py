@@ -45,4 +45,7 @@ if __name__ == '__main__':
 
 	x2, y2, x1, y1 = model.location_to_crop()
 	output = np.concatenate([imgB[x2:], model.face[x2:], output[x2:]], axis=1)
-	Image.fromarray((output).astype('uint8')).save(os.path.join(args.savedir, 'result.png'))
+	save_path = os.path.join(args.savedir, 'result.png')
+
+	Image.fromarray((output).astype('uint8')).save(save_path)
+	print('Completed 👍 Please check result in: {}'.format(save_path))

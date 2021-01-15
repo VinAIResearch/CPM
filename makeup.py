@@ -1,26 +1,30 @@
-import net
 import numpy as np
 import numpy as np
 import os, glob, cv2
 import tensorflow as tf
 import torch, cv2, os
+import utils.net as net
 
 from PIL import Image
-from api import PRN
-from models import Segmentor
 from parser import get_args
 from skimage.io import imread
 from skimage.io import imsave
 from torchvision import transforms
 from tqdm import tqdm as tqdm
+from utils.api import PRN
+from utils.models import Segmentor
 from utils.render import prepare_tri_weights
 from utils.render import render_by_tri
 from utils.render import render_texture
 from utils.utils import ToTensor
+from utils.utils import de_norm
 from utils.utils import get_preprocessing
 from utils.utils import to_tensor
+from utils.utils import to_var
 
-from blend_modes import *
+from blend_modes import darken_only
+from blend_modes import hard_light
+from blend_modes import normal
     
 class Makeup():
     def __init__(self, args):

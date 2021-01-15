@@ -1,4 +1,5 @@
 import torch
+
 from torch.nn import Parameter
 
 def l2normalize(v, eps=1e-12):

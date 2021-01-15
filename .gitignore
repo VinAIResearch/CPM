@@ -129,10 +129,11 @@ dmypy.json
 .pyre/
 
 # Folder
-./checkpoints/*
-./Data
-./Data
+
+PRNet/net-data/
 
 # File
-./result.png
-./test.png
+result.png
+test.png
+checkpoints/color.pth
+checkpoints/pattern.pth

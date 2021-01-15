@@ -13,7 +13,8 @@
 	- [Quick Start (Usage)](#usage)
 1. [About Data](#about-data)
 1. [Train & Test](#train---test)
-1. [Common Issues](#common-issues)
+1. [Acknowledgements](#acknowledgements)
+1. [Miscellaneous](#miscellaneous)
 
 ---
 
@@ -55,50 +56,56 @@ As stated in the paper, the Color Branch and Pattern Branch are totally independ
 1. Data preparation: Use [PRNet](https://github.com/YadiraF/PRNet) to generate texture_map of faces.
 1. Training
 
-Please redirect to [Color Branch 🇨](./Color) or [Pattern Branch 🇵](./Pattern) for further details.
-
----
-
-### Common Issues
-
-1. [Solved] `ImportError: libGL.so.1: cannot open shared object file: No such file or directory`:
-
-
-```
-sudo apt update
-sudo apt install libgl1-mesa-glx
-```
-
-1. [Solved] `RuntimeError: Expected tensor for argument #1 'input' to have the same device as tensor for argument #2 'weight'; but device 1 does not equal 0 (while checking arguments for cudnn_convolution)`
-
-Add CUDA VISIBLE DEVICES `CUDA_VISIBLE_DEVICES=0 python main.py`
-
-### Update Log 
-
-##### Checklist
-
-- [ ] Usage
-	- [x] Color
-	- [x] Pattern
-	- [x] C+P
-	- [ ] Partial
-- [ ] Train/ Test
-	- [ ] Color
-	- [ ] Pattern
-- [ ] Data
-	- [ ] ITW
-	- [ ] Sticker
-	- [ ] Create Synthesis Pipeline
-
-##### Issues
-
-⚠️: important
-
-- [ ] [usage] check cuda() is available else cpu
-- [ ] ⚠️ [usage] blend_mode mask return noticable artifacts!!
+Please redirect to [***Color Branch***](./Color) or [***Pattern Branch***](./Pattern) for further details.
 
 ---
 
 ### Acknowledgements
 
 Big thanks to [YadiraF (PRNet)](https://github.com/YadiraF/PRNet), [qubvel (segmentation_models.pytorch)](https://github.com/qubvel/segmentation_models.pytorch), and [wtjiang98 (BeautyGAN Pytorch)](https://github.com/wtjiang98/BeautyGAN_pytorch) for making theirs works publicly available.
+
+---
+
+# Miscellaneous
+
+### Checklist
+
+- [x] Requirements | Packages
+- [ ] Usage
+	- [x] Color Only
+	- [x] Pattern Only
+	- [x] C+P
+	- [ ] Partial | Mixed
+- [ ] Train/ Test
+	- [ ] Color (Train)
+	- [ ] Pattern (Train | Test)
+- [ ] Data | Pending (Added [readme-about-data.md](./readme-about-data.md))
+	- [ ] CPM-Synt-1 | CPM-Synt-2
+	- [ ] Stickers
+	- [ ] CPM-Real
+	- [ ] **Create Synthesis Pipeline**
+
+### Issues 🛠️
+
+🆘: important, need to fix ASAP | ⚠️: warning, minor bug | ✔️: fixed | 👍 currently fine
+
+- **Usage**
+	- ⚠️ check cuda() is available else cpu
+	- 🆘 **blend_mode mask return noticable artifacts!!**
+- **Training Code**
+	- *Color*
+	- *Pattern*
+- **Data**
+	- Synthesis Pipeline
+
+### Trouble Shooting
+
+1. [Solved] `ImportError: libGL.so.1: cannot open shared object file: No such file or directory`:
+	```
+	sudo apt update
+	sudo apt install libgl1-mesa-glx
+	```
+1. [Solved] `RuntimeError: Expected tensor for argument #1 'input' to have the same device as tensor for argument #2 'weight'; but device 1 does not equal 0 (while checking arguments for cudnn_convolution)`
+	Add CUDA VISIBLE DEVICES before .py. Ex: `CUDA_VISIBLE_DEVICES=0 python main.py`
+
+---

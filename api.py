@@ -1,7 +1,10 @@
 import numpy as np
 import os
-from skimage.io import imread, imsave
-from skimage.transform import estimate_transform, warp
+
+from skimage.io import imread
+from skimage.io import imsave
+from skimage.transform import estimate_transform
+from skimage.transform import warp
 from time import time
 
 from predictor import PosPrediction

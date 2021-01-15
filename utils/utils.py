@@ -2,6 +2,8 @@ import albumentations as albu
 import matplotlib.pyplot as plt
 import numpy as np
 
+from torch.autograd import Variable
+
 def matplotlib_imshow(img, one_channel=False):
     if one_channel:
         img = img.mean(dim=0)
@@ -65,7 +67,6 @@ def get_validation_augmentation():
 def to_tensor(x, **kwargs):
     return x.transpose(2, 0, 1).astype('float32')
 
-
 def get_preprocessing(preprocessing_fn):
     """Construct preprocessing transform
     
@@ -82,3 +83,23 @@ def get_preprocessing(preprocessing_fn):
         albu.Lambda(image=to_tensor, mask=to_tensor),
     ]
     return albu.Compose(_transform)
+
+def ToTensor(pic):
+    img = torch.from_numpy(np.array(pic, np.int16, copy=False))
+    nchannel = 3
+    img = img.view(pic.size[1], pic.size[0], nchannel)
+    img = img.transpose(0, 1).transpose(0, 2).contiguous()
+    if isinstance(img, torch.ByteTensor):
+        return img.float()
+    else:
+        return img
+    
+def de_norm(x):
+    out = (x + 1) / 2
+    return out.clamp(0, 1)
+
+def to_var(x, requires_grad=True):
+    if not requires_grad:
+        return Variable(x, requires_grad=requires_grad)
+    else:
+        return Variable(x)

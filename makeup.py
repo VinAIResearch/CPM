@@ -1,42 +1,26 @@
-import tensorflow as tf
-from PIL import Image
-import torch, cv2, os
+import net
 import numpy as np
-from utils.utils import get_preprocessing, to_tensor
-from parser import get_args
-from models import Segmentor
 import numpy as np
 import os, glob, cv2
-from skimage.io import imread, imsave
+import tensorflow as tf
+import torch, cv2, os
+
+from PIL import Image
 from api import PRN
-from utils.render import render_texture, prepare_tri_weights, render_by_tri
-import cv2
-from utils.render2 import render_colors
-from tqdm import tqdm as tqdm
-import net
+from models import Segmentor
+from parser import get_args
+from skimage.io import imread
+from skimage.io import imsave
 from torchvision import transforms
-from torch.autograd import Variable
+from tqdm import tqdm as tqdm
+from utils.render import prepare_tri_weights
+from utils.render import render_by_tri
+from utils.render import render_texture
+from utils.utils import ToTensor
+from utils.utils import get_preprocessing
+from utils.utils import to_tensor
 
 from blend_modes import *
-
-def ToTensor(pic):
-    img = torch.from_numpy(np.array(pic, np.int16, copy=False))
-    nchannel = 3
-    img = img.view(pic.size[1], pic.size[0], nchannel)
-    img = img.transpose(0, 1).transpose(0, 2).contiguous()
-    if isinstance(img, torch.ByteTensor):
-        return img.float()
-    else:
-        return img
-def de_norm(x):
-    out = (x + 1) / 2
-    return out.clamp(0, 1)
-
-def to_var(x, requires_grad=True):
-    if not requires_grad:
-        return Variable(x, requires_grad=requires_grad)
-    else:
-        return Variable(x)
     
 class Makeup():
     def __init__(self, args):

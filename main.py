@@ -1,8 +1,9 @@
-import os, cv2, random
-from PIL import Image
 import numpy as np
-from parser import get_args
+import os, cv2, random
+
+from PIL import Image
 from makeup import Makeup
+from parser import get_args
 
 def color_makeup(A_txt, B_txt, alpha):
 	color_txt = model.makeup(A_txt, B_txt)
@@ -37,7 +38,7 @@ if __name__ == '__main__':
 	else:
 		color_txt = model.makeup(A_txt, B_txt)*255
 		mask = model.get_mask(B_txt)
-		mask = (mask>0.0001).astype('uint8')
+		mask = (mask>0.001).astype('uint8')
 		new_txt = color_txt*(1-mask)[:, :, np.newaxis] + B_txt*mask[:, :, np.newaxis]
 		output = model.render_texture(new_txt)
 		output = model.blend_imgs(model.face, output, alpha=1)

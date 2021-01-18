@@ -1,20 +1,13 @@
 # Pattern Makeup - Training Guideline
 
-| ![pattern_segmentation.png](../imgs/pattern_segmentation.png) | 
+| ![color-makeup.png](../imgs/color-makeup.png) | 
 |:--:| 
-| Color Makeup |
-
-This is training guideline for Color Branch (P), one out of two branches in [Color-Pattern Makeup Transfer (CPM)](../README.md).
+| This is training guideline for Color Branch (P), one out of two branches in [Color-Pattern Makeup Transfer (CPM)](../README.md).|
 
 ---
 
-1. **Requirements**: Please refer to [Getting Started/ Requirements](../README.md), the main components are:
-	- torch >=1.6
-1. **Data Preparation**: Please download [CPM-Synt-1](../readme-about-data.md)
-1. **Training**: `python train.py --datapath /pathtodata`
-1. (Optional):
-	- Open Tensorboard: `tensorboard --logdir=runs`
+For Color Branch, we used the same CycleGAN-based model like [BeautyGAN](liusi-group.com/pdf/BeautyGAN-camera-ready_2.pdf).
+But instead of normal training pair, we used our **novel uv-space**.
 
-### Acknowledgements
-
-This code is heavily based on [wtjiang98 - BeautyGAN_pytorch](https://github.com/wtjiang98/BeautyGAN_pytorch) and [YadiraF - PRNet](https://github.com/YadiraF/PRNet)
+1. Create dataset: Download [Makeup Transfer Dataset](http://liusi-group.com/projects/BeautyGAN). Use [PRNet](https://github.com/YadiraF/PRNet) to get respective uv-map texture of each image and its segmentation mask. More detail should be find in [Synthesis-Process](../Synthesis-Process/README.md)
+1. Train: Follow instruction at [BeautyGAN-pytorch](https://github.com/wtjiang98/BeautyGAN_pytorch). Re-train model with newly established dataset.

@@ -1,18 +1,19 @@
-# Color Makeup - Training Guideline
+# Pattern Makeup - Training Guideline
 
-This is training guideline for Color Branch (**C**), one out of two branches in [Color-Pattern Makeup Transfer (CPM)](../).
+| ![pattern_segmentation.png](../imgs/pattern_segmentation.png) | 
+|:--:| 
+| Color Makeup |
 
-### Requirements
+This is training guideline for Color Branch (P), one out of two branches in [Color-Pattern Makeup Transfer (CPM)](../README.md).
 
-### Data Preparation
+---
 
-- Download [BeautyGAN](http://liusi-group.com/projects/BeautyGAN)'s [Makeup Transfer Dataset](https://drive.google.com/file/d/18UlvYDL6UGZ2rs0yaDsSzoUlw8KI5ABY/view). This dataset contains 3834 images (makeup | non-makeup) with theirs facial segmentation mask.
-
-- Run `prepare.py` to get texture map ạ mouahhh
-
-### Training
-
-- Run 
+1. **Requirements**: Please refer to [Getting Started/ Requirements](../README.md), the main components are:
+	- torch >=1.6
+1. **Data Preparation**: Please download [CPM-Synt-1](../readme-about-data.md)
+1. **Training**: `python train.py --datapath /pathtodata`
+1. (Optional):
+	- Open Tensorboard: `tensorboard --logdir=runs`
 
 ### Acknowledgements
 

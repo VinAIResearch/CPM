@@ -1,6 +1,6 @@
 # Pattern Makeup - Training Guideline
 
-| ![pattern_segmentation.md](./imgs/pattern_segmentation.png) | 
+| ![pattern_segmentation.png](../imgs/pattern_segmentation.png) | 
 |:--:| 
 | Pattern Makeup | Pattern Segmentation Model|
 

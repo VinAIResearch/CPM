@@ -464,13 +464,6 @@ class Solver_makeupGAN(object):
                     self.writer.add_scalar('losses/rec-ref', g_loss_rec_B.item(), self.i)
                     self.writer.add_scalar('losses/vgg-A', g_loss_A_vgg.item(), self.i)
                     self.writer.add_scalar('losses/vgg-B', g_loss_B_vgg.item(), self.i)
-                    # if self.lambda_spl>0:
-                    #     self.writer.add_scalar('mkup-spl/SPL-A', spl_loss_A.item(), self.i)
-                    #     self.writer.add_scalar('mkup-spl/SPL-B', spl_loss_B.item(), self.i)
-                    #     self.writer.add_scalar('mkup-spl/GPL-A', gpl_value_A.item(), self.i)
-                    #     self.writer.add_scalar('mkup-spl/GPL-B', gpl_value_B.item(), self.i)
-                    #     self.writer.add_scalar('mkup-spl/CPL-A', cpl_value_A.item(), self.i)
-                    #     self.writer.add_scalar('mkup-spl/CPL-B', cpl_value_B.item(), self.i)
                     if self.eye:
                         self.writer.add_scalar('mkup-hist/eyes', (g_A_eye_left_loss_his + g_A_eye_right_loss_his).item(), self.i)
                     if self.lips:
@@ -488,9 +481,6 @@ class Solver_makeupGAN(object):
                 # Save model checkpoints
                 if (self.i + 1) % self.snapshot_step == 0:
                     self.save_models()
-
-                # if (self.i % 100 == 99):
-                #     plot_fig.flush(self.task_name)
 
                 # plot_fig.tick()
             os.remove(os.path.join('./runs/txt', os.listdir('./runs/txt/')[0]))

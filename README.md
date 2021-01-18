@@ -78,7 +78,9 @@ Big thanks to [YadiraF (PRNet)](https://github.com/YadiraF/PRNet), [qubvel (segm
 	- [ ] Partial | Mixed
 - [ ] Train/ Test
 	- [ ] Color (Train)
-	- [ ] Pattern (Train | Test)
+	- [x] Pattern (Train)
+	- [ ] Pattern (Test)
+	- [ ] *Bonus Task* Makeup Model Zoo
 - [ ] Data | Pending (Added [readme-about-data.md](./readme-about-data.md))
 	- [ ] CPM-Synt-1 | CPM-Synt-2
 	- [ ] Stickers

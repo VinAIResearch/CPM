@@ -41,25 +41,40 @@ IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 
 ##### Installation
 
-1. Clone the repo:
-	```
-	git clone https://github.com/VinAIResearch/CPM.git
-	cd CPM
-	```
-1. Install packages `conda env create -f environment.yml`
-1. Download Makeup pretrained models from [Drive](https://drive.google.com/drive/folders/1dagiuultGgDd_QNikMTrNlmCmWEaFV_N?usp=sharing). They are `pattern.pth` and `color.pth`. Put them in `checkpoints` folder.
-1. Download [PRNet pretrained model] from [Drive](https://drive.google.com/file/d/1UoE-XuW1SDLUjZmJPkIZ1MLxvQFgmTFH/view). Put it in `PRNet/net-data`
+``` sh
+# clone the repo
+git clone https://github.com/VinAIResearch/CPM.git
+cd CPM
+
+# install dependencies
+conda env create -f environment.yml
+```
+
+
+##### Download pre-trained models
+
+- Download Makeup pretrained models from [Drive](https://drive.google.com/drive/folders/1dagiuultGgDd_QNikMTrNlmCmWEaFV_N?usp=sharing). They are `pattern.pth` and `color.pth`. Put them in `checkpoints` folder.
+
+- Download [PRNet pretrained model] from [Drive](https://drive.google.com/file/d/1UoE-XuW1SDLUjZmJPkIZ1MLxvQFgmTFH/view). Put it in `PRNet/net-data`
+
 ##### Usage
 
-- Color+Pattern: `CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png`
-- Color Only: `CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --color_only`
-- Pattern Only: `CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --pattern_only`
+```sh
+# Color+Pattern: 
+CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png
+
+# Color Only: 
+CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --color_only
+
+# Pattern Only: 
+CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --pattern_only
+```
 
 Result image will be saved in `result.png` (style | original image | result). You can try other styles `style-2.png`, `style-3.png`, etc.
 
 ---
 
-### About Data
+### Datasets
 
 We introduce ✨ 4 new datasets: CPM-Real, CPM-Synt-1, CPM-Synt-2, and Stickers datasets. Besides, we also use published [LADN's Dataset](https://georgegu1997.github.io/LADN-project-page/) & [Makeup Transfer Dataset](http://liusi-group.com/projects/BeautyGAN).
 
@@ -88,13 +103,9 @@ Please redirect to [***Color Branch***](./Color) or [***Pattern Branch***](./Pat
 1. [Solved] `RuntimeError: Expected tensor for argument #1 'input' to have the same device as tensor for argument #2 'weight'; but device 1 does not equal 0 (while checking arguments for cudnn_convolution)`
 	Add CUDA VISIBLE DEVICES before .py. Ex: `CUDA_VISIBLE_DEVICES=0 python main.py`
 
----
 
-### Acknowledgements
 
-Big thanks to [YadiraF (PRNet)](https://github.com/YadiraF/PRNet), [qubvel (segmentation_models.pytorch)](https://github.com/qubvel/segmentation_models.pytorch), and [wtjiang98 (BeautyGAN Pytorch)](https://github.com/wtjiang98/BeautyGAN_pytorch) for making theirs works publicly available.
-
-## Citation
+### Citation
 
 If you use this code or incorporate it into other software, please consider citing:
 

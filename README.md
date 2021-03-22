@@ -72,6 +72,10 @@ CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/
 
 Result image will be saved in `result.png` (style | original image | result). You can try other styles `style-2.png`, `style-3.png`, etc.
 
+``` diff
+- Can you please include some sample input and output images: (style, input, output, output_color-only, output_pattern-only)? This would be useful for people to verify that they have installed your code successfuly. 
+```
+
 ---
 
 ### Datasets
@@ -80,9 +84,14 @@ We introduce ✨ 4 new datasets: CPM-Real, CPM-Synt-1, CPM-Synt-2, and Stickers 
 
 Please refer to [readme-about-data.md](./readme-about-data.md) for downloading these datasets.
 
+``` diff
+- Perhaps it is find to have a separate file for data, but I suggest merging it to this main page as well. First, it is quite short. Second, it will make this page look more comprehensive. Third, being exposed in the front page, the datasets have higher chance of being used. 
+
+```
+
 ---
 
-### Train & Test
+### Training and Evaluation
 
 
 As stated in the paper, the Color Branch and Pattern Branch are totally independent. Yet, they shared the same workflow:
@@ -115,11 +124,9 @@ T. Nguyen, A. Tran, M. Hoai (2021) \
 IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 
 
-```
-@inproceedings{m_Nguyen-etal-CVPR21,
-  author = {Thao Nguyen and Anh Tran and Minh Hoai},
-  title = {Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer},
-  year = {2021},
-  booktitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition (CVPR)},
+@inproceedings{m_Nguyen-etal-CVPR21, \
+  author = {Thao Nguyen and Anh Tran and Minh Hoai}, \
+  title = {Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer}, \
+  year = {2021}, \
+  booktitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition (CVPR)} \
 }
-```

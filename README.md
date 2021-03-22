@@ -35,6 +35,12 @@ IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 
 ##### Requirements
 
+``` diff
+- Need to specify some presequisites such as cuda version 
+```
+
+##### Installation
+
 1. Clone the repo:
 	```
 	git clone https://github.com/VinAIResearch/CPM.git

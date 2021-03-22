@@ -18,7 +18,7 @@ If you use this code or incorporate it into other software, please consider citi
 
 ```
 
-*Although the main part of the code has been uploaded, we're still fixing some minor bugs. If you have trouble running the code, please [create an issue](https://github.com/VinAIResearch/CPM/issues). Thank you 🌱"
+*Although the main part of the code has been uploaded, we're still fixing some minor bugs. If you have trouble running the code, please read [Trouble Shooting](https://github.com/VinAIResearch/CPM#trouble-shooting) first before [creating an issue](https://github.com/VinAIResearch/CPM/issues). Thank you 🌱*
 
 ---
 
@@ -74,47 +74,6 @@ As stated in the paper, the Color Branch and Pattern Branch are totally independ
 
 Please redirect to [***Color Branch***](./Color) or [***Pattern Branch***](./Pattern) for further details.
 
----
-
-### Acknowledgements
-
-Big thanks to [YadiraF (PRNet)](https://github.com/YadiraF/PRNet), [qubvel (segmentation_models.pytorch)](https://github.com/qubvel/segmentation_models.pytorch), and [wtjiang98 (BeautyGAN Pytorch)](https://github.com/wtjiang98/BeautyGAN_pytorch) for making theirs works publicly available.
-
----
-
-# Miscellaneous
-
-### Checklist
-
-- [x] Requirements | Packages
-- [ ] Usage
-	- [x] Color Only
-	- [x] Pattern Only
-	- [x] C+P
-	- [ ] Partial | Mixed
-- [ ] Train/ Test
-	- [ ] Color (Train)
-	- [x] Pattern (Train)
-	- [ ] Pattern (Test)
-	- [ ] *Bonus Task* Makeup Model Zoo
-- [ ] Data | Pending (Added [readme-about-data.md](./readme-about-data.md))
-	- [ ] CPM-Synt-1 | CPM-Synt-2
-	- [ ] Stickers
-	- [ ] CPM-Real
-	- [ ] **Create Synthesis Pipeline**
-
-### Issues 🛠️
-
-🆘: important, need to fix ASAP | ⚠️: warning, minor bug | ✔️: fixed | 👍 currently fine
-
-- **Usage**
-	- ⚠️ check cuda() is available else cpu
-	- 🆘 **blend_mode mask return noticable artifacts!!**
-- **Training Code**
-	- *Color*
-	- *Pattern*
-- **Data**
-	- Synthesis Pipeline
 
 ### Trouble Shooting
 
@@ -127,3 +86,7 @@ Big thanks to [YadiraF (PRNet)](https://github.com/YadiraF/PRNet), [qubvel (segm
 	Add CUDA VISIBLE DEVICES before .py. Ex: `CUDA_VISIBLE_DEVICES=0 python main.py`
 
 ---
+
+### Acknowledgements
+
+Big thanks to [YadiraF (PRNet)](https://github.com/YadiraF/PRNet), [qubvel (segmentation_models.pytorch)](https://github.com/qubvel/segmentation_models.pytorch), and [wtjiang98 (BeautyGAN Pytorch)](https://github.com/wtjiang98/BeautyGAN_pytorch) for making theirs works publicly available.

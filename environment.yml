@@ -161,11 +161,10 @@ dependencies:
   - zlib=1.2.11
   - zstd=1.4.9
   - pip:
-    - blend-modes=
-    - efficientnet-pytorch=
-    - future=
-    - munch=
-    - pretrainedmodels=
-    - segmentation-models-pytorch=
-    - tensorflow-gpu=
-    - timm=
+    - blend-modes
+    - efficientnet-pytorch
+    - future
+    - munch
+    - pretrainedmodels
+    - segmentation-models-pytorch
+

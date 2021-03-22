@@ -12,7 +12,7 @@ If you use this code or incorporate it into other software, please consider citi
     @inProceedings{CPM,
     title     = {Lipstick ain't enough: Beyond Color-Matching for In-the-Wild Makeup Transfer},
     author    = {Thao Nguyen, Anh Tran, Minh Hoai},
-    booktitle   = {CVPR},
+    booktitle = {CVPR},
     year      = {2021}
     }
 

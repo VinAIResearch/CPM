@@ -6,17 +6,14 @@
 
 ---
 
-If you use this code or incorporate it into other software, please consider citing:
+This is the official implementation of the CVPR'21 paper: 
 
-```
-    @inProceedings{CPM,
-    title     = {Lipstick ain't enough: Beyond Color-Matching for In-the-Wild Makeup Transfer},
-    author    = {Thao Nguyen, Anh Tran, Minh Hoai},
-    booktitle = {CVPR},
-    year      = {2021}
-    }
+**Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer**. \
+T. Nguyen, A. Tran, M. Hoai (2021) \
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 
-```
+
+
 
 *Although the main part of the code has been uploaded, we're still fixing some minor bugs. If you have trouble running the code, please read [Trouble Shooting](https://github.com/VinAIResearch/CPM#trouble-shooting) first before [creating an issue](https://github.com/VinAIResearch/CPM/issues). Thank you 🌱*
 
@@ -90,3 +87,22 @@ Please redirect to [***Color Branch***](./Color) or [***Pattern Branch***](./Pat
 ### Acknowledgements
 
 Big thanks to [YadiraF (PRNet)](https://github.com/YadiraF/PRNet), [qubvel (segmentation_models.pytorch)](https://github.com/qubvel/segmentation_models.pytorch), and [wtjiang98 (BeautyGAN Pytorch)](https://github.com/wtjiang98/BeautyGAN_pytorch) for making theirs works publicly available.
+
+## Citation
+
+If you use this code or incorporate it into other software, please consider citing:
+
+
+**Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer**. \
+T. Nguyen, A. Tran, M. Hoai (2021) \
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
+
+
+```
+@inproceedings{m_Nguyen-etal-CVPR21,
+  author = {Thao Nguyen and Anh Tran and Minh Hoai},
+  title = {Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer},
+  year = {2021},
+  booktitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition (CVPR)},
+}
+```

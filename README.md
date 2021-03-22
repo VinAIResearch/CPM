@@ -2,7 +2,7 @@
 
 | ![teaser.png](./imgs/teaser.png) | 
 |:--:| 
-| **CPM** (Color-Pattern Makeup Transfer) is the first holistic model that can **replicate both colors and patterns** from a reference makeup style to another image. Details of the model architecture and experimental results can be found in [this paper]()|
+| **CPM** (Color-Pattern Makeup Transfer) is the a holistic makeup transfer model that can **replicate both colors and patterns** from a reference makeup style to another image. |
 
 ---
 

@@ -2,7 +2,23 @@
 
 | ![teaser.png](./imgs/teaser.png) | 
 |:--:| 
-| CPM: Color-Pattern Makeup Transfer, implementation for *[Lipstick ain't enough: Beyond Color-Matching for In-the-Wild Makeup Transfer]()* Link will be here very soon |
+| **CPM** (Color-Pattern Makeup Transfer) is the first holistic model that can **replicate both colors and patterns** from a reference makeup style to another image. Details of the model architecture and experimental results can be found in [this paper]()|
+
+---
+
+If you use this code or incorporate it into other software, please consider citing:
+
+```
+    @inProceedings{CPM,
+    title     = {Lipstick ain't enough: Beyond Color-Matching for In-the-Wild Makeup Transfer},
+    author    = {Thao Nguyen, Anh Tran, Minh Hoai},
+    booktitle   = {CVPR},
+    year      = {2021}
+    }
+
+```
+
+*Although the main part of the code has been uploaded, we're still fixing some minor bugs. If you have trouble running the code, please [create an issue](https://github.com/VinAIResearch/CPM/issues). Thank you 🌱"
 
 ---
 
@@ -32,11 +48,11 @@
 1. Download [PRNet pretrained model] from [Drive](https://drive.google.com/file/d/1UoE-XuW1SDLUjZmJPkIZ1MLxvQFgmTFH/view). Put it in `PRNet/net-data`
 ##### Usage
 
-- Color+Pattern: `python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png`
-- Color Only: `python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --color_only`
-- Pattern Only: `python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --pattern_only`
+- Color+Pattern: `CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png`
+- Color Only: `CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --color_only`
+- Pattern Only: `CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --pattern_only`
 
-Result image will be saved in `result.png` (style | original image | result)
+Result image will be saved in `result.png` (style | original image | result). You can try other styles `style-2.png`, `style-3.png`, etc.
 
 ---
 

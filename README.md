@@ -15,7 +15,7 @@ IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 
 
 
-*Although the main part of the code has been uploaded, we're still fixing some minor bugs. If you have trouble running the code, please read [Trouble Shooting](https://github.com/VinAIResearch/CPM#trouble-shooting) first before [creating an issue](https://github.com/VinAIResearch/CPM/issues). Thank you 🌱*
+*Although the main part of the code has been uploaded, we're still fixing some minor bugs. If you have trouble running the code, please read [Trouble Shooting](https://github.com/VinAIResearch/CPM#trouble-shooting) before [creating an issue](https://github.com/VinAIResearch/CPM/issues). Thank you.*
 
 ---
 
@@ -35,9 +35,10 @@ IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 
 ##### Requirements
 
-``` diff
-- Need to specify some presequisites such as cuda version 
-```
+- python=3.7
+- torch==1.6.0
+- tensorflow-gpu==1.14
+- [segmentation_models_pytorch](https://github.com/qubvel/segmentation_models.pytorch)
 
 ##### Installation
 
@@ -49,7 +50,6 @@ cd CPM
 # install dependencies
 conda env create -f environment.yml
 ```
-
 
 ##### Download pre-trained models
 
@@ -70,11 +70,8 @@ CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/
 CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --pattern_only
 ```
 
-Result image will be saved in `result.png` (style | original image | result). You can try other styles `style-2.png`, `style-3.png`, etc.
-
-``` diff
-- Can you please include some sample input and output images: (style, input, output, output_color-only, output_pattern-only)? This would be useful for people to verify that they have installed your code successfuly. 
-```
+Result image will be saved in `result.png`. (From left to right: Style, Original Image and Output)
+<img src="./result.png" alt="drawing" width="50"/>
 
 ---
 
@@ -82,12 +79,16 @@ Result image will be saved in `result.png` (style | original image | result). Yo
 
 We introduce ✨ 4 new datasets: CPM-Real, CPM-Synt-1, CPM-Synt-2, and Stickers datasets. Besides, we also use published [LADN's Dataset](https://georgegu1997.github.io/LADN-project-page/) & [Makeup Transfer Dataset](http://liusi-group.com/projects/BeautyGAN).
 
-Please refer to [readme-about-data.md](./readme-about-data.md) for downloading these datasets.
+CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2 are build on [Makeup Transfer](http://liusi-group.com/projects/BeautyGAN) and Stickers.
 
-``` diff
-- Perhaps it is find to have a separate file for data, but I suggest merging it to this main page as well. First, it is quite short. Second, it will make this page look more comprehensive. Third, being exposed in the front page, the datasets have higher chance of being used. 
+|    Name  						  | #imgs | Description						   | - 									|
+|:-------------------------------:|:-----:|:-----------------------------------|:----------------------------------:|
+|[CPM-Real]()| 3895  | real - makeup styles 			   |![CPM-Real.png](./imgs/CPM-Real.png)|
+|[CPM-Synt-1]()| 5555| synthesis - makeup img with pattern segmentation mask|![./imgs/CPM-Synt-1.png](./imgs/CPM-Synt-1.png)|
+|[CPM-Synt-2]()| 1625| synthesis - triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
+|[Stickers]()|577| high-quality images with alpha channel, used to create CPM-Synt-1 and CPM-Synt-2 |![Stickers.png](./imgs/Stickers.png)|
 
-```
+**Link will be provided soon**
 
 ---
 
@@ -112,21 +113,19 @@ Please redirect to [***Color Branch***](./Color) or [***Pattern Branch***](./Pat
 1. [Solved] `RuntimeError: Expected tensor for argument #1 'input' to have the same device as tensor for argument #2 'weight'; but device 1 does not equal 0 (while checking arguments for cudnn_convolution)`
 	Add CUDA VISIBLE DEVICES before .py. Ex: `CUDA_VISIBLE_DEVICES=0 python main.py`
 
-
-
 ### Citation
 
 If you use this code or incorporate it into other software, please consider citing:
-
 
 **Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer**. \
 T. Nguyen, A. Tran, M. Hoai (2021) \
 IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 
-
+```
 @inproceedings{m_Nguyen-etal-CVPR21, \
   author = {Thao Nguyen and Anh Tran and Minh Hoai}, \
   title = {Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer}, \
   year = {2021}, \
   booktitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition (CVPR)} \
 }
+```

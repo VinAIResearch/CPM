@@ -133,7 +133,7 @@ dmypy.json
 PRNet/net-data/
 Data/
 # File
-result.png
+#result.png
 test.png
 checkpoints/color.pth
 checkpoints/pattern.pth

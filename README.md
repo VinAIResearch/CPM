@@ -24,10 +24,9 @@ IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 1. [Getting Started](#getting-started)
 	- [Requirements](#requirements)
 	- [Quick Start (Usage)](#usage)
-1. [About Data](#about-data)
-1. [Train & Test](#train---test)
-1. [Acknowledgements](#acknowledgements)
-1. [Miscellaneous](#miscellaneous)
+1. [Datasets](#datasets)
+1. [Training & Evaluation](#training-and-evaluation)
+1. [Citation](#citation)
 
 ---
 
@@ -70,8 +69,12 @@ CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/
 CUDA_VISIBLE_DEVICES=0 python main.py --style ./imgs/style-1.png --input ./imgs/non-makeup.png --pattern_only
 ```
 
-Result image will be saved in `result.png`. (From left to right: Style, Original Image and Output)
-<img src="./result.png" alt="drawing" width="50"/>
+Result image will be saved in `result.png`.s
+
+<div style="align: left; text-align:center;">
+  <img src="./result.png" alt="result" width="250"/>
+  <div class="caption">From left to right: Style, Input & Output</div>
+</div>
 
 ---
 
@@ -121,11 +124,12 @@ If you use this code or incorporate it into other software, please consider citi
 T. Nguyen, A. Tran, M. Hoai (2021) \
 IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 
+
 ```
-@inproceedings{m_Nguyen-etal-CVPR21, \
-  author = {Thao Nguyen and Anh Tran and Minh Hoai}, \
-  title = {Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer}, \
-  year = {2021}, \
-  booktitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition (CVPR)} \
+@inproceedings{m_Nguyen-etal-CVPR21,
+  author = {Thao Nguyen and Anh Tran and Minh Hoai},
+  title = {Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer},
+  year = {2021},
+  booktitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition (CVPR)}
 }
 ```

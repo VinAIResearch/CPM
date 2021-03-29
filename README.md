@@ -85,12 +85,12 @@ CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2
 
 |    Name  						  | #imgs | Description						   | - 									|
 |:-------------------------------:|:-----:|:-----------------------------------|:----------------------------------:|
-|[CPM-Real]()| 3895  | real - makeup styles 			   |![CPM-Real.png](./imgs/CPM-Real.png)|
-|[CPM-Synt-1]()| 5555| synthesis - makeup img with pattern segmentation mask|![./imgs/CPM-Synt-1.png](./imgs/CPM-Synt-1.png)|
-|[CPM-Synt-2]()| 1625| synthesis - triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
-|[Stickers]()|577| high-quality images with alpha channel, used to create CPM-Synt-1 and CPM-Synt-2 |![Stickers.png](./imgs/Stickers.png)|
+|[CPM-Real](https://public.vinai.io/CPM-datasets/CPM-Real.zip)| 3895  | real - makeup styles 			   |![CPM-Real.png](./imgs/CPM-Real.png)|
+|[CPM-Synt-1](https://public.vinai.io/CPM-datasets/CPM-Synt-1.zip)| 5555| synthesis - makeup img with pattern segmentation mask|![./imgs/CPM-Synt-1.png](./imgs/CPM-Synt-1.png)|
+|[CPM-Synt-2](https://public.vinai.io/CPM-datasets/CPM-Synt-2.zip)| 1625| synthesis - triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
+|[Stickers](https://public.vinai.io/CPM-datasets/Sticker.zip)|577| high-quality images with alpha channel, used to create CPM-Synt-1 and CPM-Synt-2 |![Stickers.png](./imgs/Stickers.png)|
 
-*Dataset Folder Structure can be found [here](https://github.com/VinAIResearch/CPM/blob/main/about-data.md).*
+*You can also download these datasets from [Google Drive](https://drive.google.com/drive/folders/19xjpzKf-dl0-uayiUsuM9ulYk4ER2Vsj?usp=sharing). Dataset Folder Structure can be found [here](https://github.com/VinAIResearch/CPM/blob/main/about-data.md).*
 
 ---
 

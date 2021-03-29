@@ -8,7 +8,7 @@
 > 
 > * to use the dataset for research or educational purposes only
 > * to not distribute or part of the dataset in any original or modified form.
-> * and to [cite our paper](#Citation) whenever the dataset is employed to help produce published results.
+> * and to [cite our paper](https://github.com/VinAIResearch/CPM#citation) whenever the dataset is employed to help produce published results.
 
 Detail about ✨ 4 new datasets: CPM-Real, CPM-Synt-1, CPM-Synt-2, and Stickers datasets can be found in [our paper]().
 

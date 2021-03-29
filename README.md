@@ -14,9 +14,7 @@ IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 
 *Although the main part of the code has been uploaded, we're still fixing some minor bugs. If you have trouble running the code, please read [Trouble Shooting](https://github.com/VinAIResearch/CPM#trouble-shooting) before [creating an issue](https://github.com/VinAIResearch/CPM/issues).* Thank you. 🌿
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9QVSHPJ8fx9X8yg6KnhE40PPlyW5iNp?usp=sharing) \
-[![arXiv](https://img.shields.io/badge/arXiv-2103.13711-red.svg)](https://arxiv.org/abs/xxx.xxxx) \
-[![project page](https://img.shields.io/badge/ProjectPage-up-green.svg)](https://thaoshibe.github.io/CPM) \
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9QVSHPJ8fx9X8yg6KnhE40PPlyW5iNp?usp=sharing) \ [![arXiv](https://img.shields.io/badge/arXiv-xxxx.xxxxx-red.svg)](https://arxiv.org/abs/xxx.xxxx) \ [![project page](https://img.shields.io/badge/ProjectPage-up-green.svg)](https://thaoshibe.github.io/CPM) \
 
 ---
 
@@ -92,7 +90,7 @@ CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2
 |[CPM-Synt-2]()| 1625| synthesis - triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
 |[Stickers]()|577| high-quality images with alpha channel, used to create CPM-Synt-1 and CPM-Synt-2 |![Stickers.png](./imgs/Stickers.png)|
 
-**Link will be provided soon**
+*Dataset Folder Structure can be found [here](https://github.com/VinAIResearch/CPM/blob/main/about-data.md).*
 
 ---
 

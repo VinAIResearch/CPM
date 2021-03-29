@@ -15,13 +15,8 @@ IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 *Although the main part of the code has been uploaded, we're still fixing some minor bugs. If you have trouble running the code, please read [Trouble Shooting](https://github.com/VinAIResearch/CPM#trouble-shooting) before [creating an issue](https://github.com/VinAIResearch/CPM/issues).* Thank you. 🌿
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9QVSHPJ8fx9X8yg6KnhE40PPlyW5iNp?usp=sharing) \
-[![arXiv](https://img.shields.io/badge/arXiv-2103.13711-red.svg)](https://arxiv.org/abs/2103.13711 ) \
+[![arXiv](https://img.shields.io/badge/arXiv-2103.13711-red.svg)](https://arxiv.org/abs/xxx.xxxx) \
 [![project page](https://img.shields.io/badge/ProjectPage-up-green.svg)](https://thaoshibe.github.io/CPM) \
-<!-- Place this tag where you want the button to render. -->
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/VinAIResearch/CPM" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star VinAIResearch/CPM on GitHub">Star</a>
 
 ---
 

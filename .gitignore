@@ -137,3 +137,5 @@ Data/
 test.png
 checkpoints/color.pth
 checkpoints/pattern.pth
+Pattern/__pycache__
+Color/__pycache__

@@ -6,15 +6,6 @@ import numpy as np
 
 
 def isPointInTri(point, tri_points):
-    """Judge whether the point is in the triangle
-    Method:
-        http://blackpawn.com/texts/pointinpoly/
-    Args:
-        point: [u, v] or [x, y]
-        tri_points: three vertices(2d points) of a triangle. 2 coords x 3 vertices
-    Returns:
-        bool: true for in triangle
-    """
     tp = tri_points
 
     # vectors

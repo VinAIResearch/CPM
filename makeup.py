@@ -91,7 +91,7 @@ class Makeup:
         face_mask = render_texture(vertices.T, vis_colors.T, triangles.T, h, w, c=1)
         face_mask = np.squeeze(face_mask > 0).astype(np.float32)
         weights, dst_triangle_buffer = prepare_tri_weights(vertices.T, triangles.T, h, w)
-        uv_face = cv2.imread("./PRNet/uv-data/uv_face.png")[:, :, 0] / 255.0
+        # uv_face = cv2.imread("./PRNet/uv-data/uv_face.png")[:, :, 0] / 255.0
         texture = cv2.remap(
             face,
             pos[:, :, :2].astype(np.float32),

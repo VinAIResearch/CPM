@@ -14,7 +14,7 @@ IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
 
 *Although the main part of the code has been uploaded, we're still fixing some minor bugs. If you have trouble running the code, please read [Trouble Shooting](https://github.com/VinAIResearch/CPM#trouble-shooting) before [creating an issue](https://github.com/VinAIResearch/CPM/issues).* Thank you. 🌿
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9QVSHPJ8fx9X8yg6KnhE40PPlyW5iNp?usp=sharing) \ [![arXiv](https://img.shields.io/badge/arXiv-xxxx.xxxxx-red.svg)](https://arxiv.org/abs/xxx.xxxx) \ [![project page](https://img.shields.io/badge/ProjectPage-up-green.svg)](https://thaoshibe.github.io/CPM) \
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9QVSHPJ8fx9X8yg6KnhE40PPlyW5iNp?usp=sharing) \ [![arXiv](https://img.shields.io/badge/arXiv-2104.01867-red.svg)](https://arxiv.org/abs/2104.01867) \ [![project page](https://img.shields.io/badge/ProjectPage-up-green.svg)](https://thaoshibe.github.io/CPM) \
 
 ---
 
@@ -88,7 +88,7 @@ CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2
 |[CPM-Real](https://public.vinai.io/CPM-datasets/CPM-Real.zip)| 3895  | real - makeup styles 			   |![CPM-Real.png](./imgs/CPM-Real.png)|
 |[CPM-Synt-1](https://public.vinai.io/CPM-datasets/CPM-Synt-1.zip)| 5555| synthesis - makeup img with pattern segmentation mask|![./imgs/CPM-Synt-1.png](./imgs/CPM-Synt-1.png)|
 |[CPM-Synt-2](https://public.vinai.io/CPM-datasets/CPM-Synt-2.zip)| 1625| synthesis - triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
-|[Stickers](https://public.vinai.io/CPM-datasets/Sticker.zip)|577| high-quality images with alpha channel, used to create CPM-Synt-1 and CPM-Synt-2 |![Stickers.png](./imgs/Stickers.png)|
+|[Stickers](https://public.vinai.io/CPM-datasets/Stickers.zip)|577| high-quality images with alpha channel, used to create CPM-Synt-1 and CPM-Synt-2 |![Stickers.png](./imgs/Stickers.png)|
 
 *You can also download these datasets from [Google Drive](https://drive.google.com/drive/folders/19xjpzKf-dl0-uayiUsuM9ulYk4ER2Vsj?usp=sharing). Dataset Folder Structure can be found [here](https://github.com/VinAIResearch/CPM/blob/main/about-data.md).*
 
@@ -99,11 +99,11 @@ CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2
 
 As stated in the paper, the Color Branch and Pattern Branch are totally independent. Yet, they shared the same workflow:
 
-1. Data preparation: Use [PRNet](https://github.com/YadiraF/PRNet) to generate texture_map of faces.
+1. Data preparation: Generating texture_map of faces.
+
 1. Training
 
 Please redirect to [***Color Branch***](./Color) or [***Pattern Branch***](./Pattern) for further details.
-
 
 ### Trouble Shooting
 
@@ -113,7 +113,14 @@ Please redirect to [***Color Branch***](./Color) or [***Pattern Branch***](./Pat
 	sudo apt install libgl1-mesa-glx
 	```
 1. [Solved] `RuntimeError: Expected tensor for argument #1 'input' to have the same device as tensor for argument #2 'weight'; but device 1 does not equal 0 (while checking arguments for cudnn_convolution)`
+
 	Add CUDA VISIBLE DEVICES before .py. Ex: `CUDA_VISIBLE_DEVICES=0 python main.py`
+1. [Solved] `RuntimeError: cuda runtime error (999) : unknown error at /opt/conda/conda-bld/pytorch_1595629403081/work/aten/src/THC/THCGeneral.cpp:47`
+
+```
+sudo rmmod nvidia_uvm
+sudo modprobe nvidia_uvm
+```
 
 ### Citation
 

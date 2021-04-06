@@ -1,8 +1,8 @@
-# Pattern Makeup - Training Guideline
+# Color Makeup - Training Guideline
 
 | ![color-makeup.png](../imgs/color-makeup.png) | 
 |:--:| 
-| This is training guideline for Color Branch (P), one out of two branches in [Color-Pattern Makeup Transfer (CPM)](../README.md).|
+| This is training guideline for Color Branch (C), one out of two branches in [Color-Pattern Makeup Transfer (CPM)](../README.md).|
 
 ---
 
@@ -21,7 +21,7 @@ But instead of normal training pair, we used our **novel uv-space**.
 		|__ non-makeup
 	```
 
-2. **Get UV texture**: Use [PRNet](https://github.com/YadiraF/PRNet) to get respective uv-map texture of each image and its segmentation mask**
+2. **Get UV texture**: Use [PRNet](https://github.com/YadiraF/PRNet) to get respective uv-map texture of each image and its segmentation mask
 
 
 ```

@@ -1,21 +1,19 @@
 ### README - About datasets
 
-:warning: **A live version of this README can be found at [README - About Datasets](https://github.com/VinAIResearch/CPM/blob/main/about-data.md)** :warning:
-
 ---
 
 > ***By downloading these dataset, USER agrees:***
 > 
 > * to use the dataset for research or educational purposes only
 > * to not distribute or part of the dataset in any original or modified form.
-> * and to [cite our paper](https://github.com/VinAIResearch/CPM#citation) whenever the dataset is employed to help produce published results.
+> * and to [cite our paper](https://github.com/VinAIResearch/CPM) whenever the dataset is employed to help produce published results.
 
-Detail about ✨ 4 new datasets: CPM-Real, CPM-Synt-1, CPM-Synt-2, and Stickers datasets can be found in [our paper]().
+Detail about ✨ 4 new datasets: CPM-Real, CPM-Synt-1, CPM-Synt-2, and Stickers datasets can be found in [our paper](https://arxiv.org/abs/2104.01867).
 
-- [Stickers](#Stickers)
-- [CPM-Real](#CPM-Real): Real faces with In-the-Wild makeup styles.
-- [CPM-Synt-1](#CPM-Synt-1): Added Pattern Dataset, used to train Pattern Branch
-- [CPM-Synt-2](#CPM-Synt-2): Transferred Pattern Dataset (Triplet), used for ground-truth experiments.
+- [Stickers](#Stickers). [click to download](https://public.vinai.io/CPM-datasets/Stickers.zip)
+- [CPM-Real](#CPM-Real) - Real faces with In-the-Wild makeup styles. [click to download](https://public.vinai.io/CPM-datasets/CPM-Real.zip)
+- [CPM-Synt-1](#CPM-Synt-1) - Added Pattern Dataset, used to train Pattern Branch. [click to download](https://public.vinai.io/CPM-datasets/CPM-Synt-1.zip)
+- [CPM-Synt-2](#CPM-Synt-2) - Transferred Pattern Dataset (Triplet), used for ground-truth experiments. [click to download](https://public.vinai.io/CPM-datasets/CPM-Synt-2.zip)
 
 ### Stickers
 

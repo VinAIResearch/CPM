@@ -1,31 +1,59 @@
-# CPM: Color-Pattern Makeup Transfer
-
-| ![teaser.png](./imgs/teaser.png) | 
-|:--:| 
-| **CPM** (Color-Pattern Makeup Transfer) is the a holistic makeup transfer model that can **replicate both colors and patterns** from a reference makeup style to another image. |
-
----
-
-This is the official implementation of the CVPR'21 paper: 
-
-**Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer**. \
-T. Nguyen, A. Tran, M. Hoai (2021) \
-IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
-
-*🌿 Although the main part of the code has been uploaded, we're still fixing some minor bugs. If you have trouble running the code, please read [Trouble Shooting](https://github.com/VinAIResearch/CPM#trouble-shooting) before [creating an issue](https://github.com/VinAIResearch/CPM/issues).* Thank you. 🌿
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9QVSHPJ8fx9X8yg6KnhE40PPlyW5iNp?usp=sharing) | [![arXiv](https://img.shields.io/badge/arXiv-2104.01867-red.svg)](https://arxiv.org/abs/2104.01867) | [![project page](https://img.shields.io/badge/ProjectPage-up-green.svg)](https://thaoshibe.github.io/CPM) |
-
----
-
 ##### Table of Content
 
+1. [Introduction](#cpm-color-pattern-makeup-transfer)
+1. [Datasets](#datasets)
 1. [Getting Started](#getting-started)
 	- [Requirements](#requirements)
-	- [Quick Start (Usage)](#usage)
-1. [Datasets](#datasets)
+	- [Usage Example](#usage)
 1. [Training & Evaluation](#training-and-evaluation)
-1. [Citation](#citation)
+
+# CPM: Color-Pattern Makeup Transfer
+
+- CPM is a holistic makeup transfer framework that outperforms previous state-of-the-art models on both light and extreme makeup styles.
+- CPM consists of an improved color transfer branch (based on [BeautyGAN](http://www.colalab.org/projects/BeautyGAN)) and a novel pattern transfer branch.
+- The datasets used to train and evaluate CPM contains both real and synthetic, light and extreme examples.
+
+| ![teaser.png](./imgs/teaser.png) |
+|:--:|
+| *CPM can replicate **both colors and patterns** from a reference makeup style to another image.*|
+
+Details of the dataset construction, model architecture and experimental results can be found in [our following paper](https://arxiv.org/abs/2104.01867):
+
+```
+@inproceedings{m_Nguyen-etal-CVPR21,
+  author = {Thao Nguyen and Anh Tran and Minh Hoai},
+  title = {Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer},
+  year = {2021},
+  booktitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition (CVPR)}
+}
+```
+**Please CITE** our paper whenever our dataset or model implementation is used to help produce published results or incorporated into other software.
+
+<center>
+	[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9QVSHPJ8fx9X8yg6KnhE40PPlyW5iNp?usp=sharing) - [![arXiv](https://img.shields.io/badge/arXiv-2104.01867-red.svg)](https://arxiv.org/abs/2104.01867) - [![project page](https://img.shields.io/badge/ProjectPage-up-green.svg)](https://thaoshibe.github.io/CPM)
+</center>
+
+---
+
+### Datasets
+
+We introduce ✨ 4 new datasets: **CPM-Real**, **CPM-Synt-1**, **CPM-Synt-2**, and **Stickers** datasets. Besides, we also use published [LADN's Dataset](https://georgegu1997.github.io/LADN-project-page/) & [Makeup Transfer Dataset](http://liusi-group.com/projects/BeautyGAN).
+
+CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2 are build on [Makeup Transfer](http://liusi-group.com/projects/BeautyGAN) and Stickers. *(Click on dataset name to download)*
+
+|    Name  						  | #imgs | Description						   | - 									|
+|:-------------------------------:|:-----:|:-----------------------------------|:----------------------------------:|
+|[CPM-Real](https://public.vinai.io/CPM-datasets/CPM-Real.zip)| 3895  | real - makeup styles 			   |![CPM-Real.png](./imgs/CPM-Real.png)|
+|[CPM-Synt-1](https://public.vinai.io/CPM-datasets/CPM-Synt-1.zip)| 5555| synthesis - makeup img with pattern segmentation mask|![./imgs/CPM-Synt-1.png](./imgs/CPM-Synt-1.png)|
+|[CPM-Synt-2](https://public.vinai.io/CPM-datasets/CPM-Synt-2.zip)| 1625| synthesis - triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
+|[Stickers](https://public.vinai.io/CPM-datasets/Stickers.zip)|577| high-quality images with alpha channel, used to create CPM-Synt-1 and CPM-Synt-2 |![Stickers.png](./imgs/Stickers.png)|
+
+*Dataset Folder Structure can be found [here](https://github.com/VinAIResearch/CPM/blob/main/about-data.md).*
+> ***By downloading these dataset, USER agrees:***
+> 
+> * to use the dataset for research or educational purposes only
+> * to not distribute or part of the dataset in any original or modified form.
+> * and to [cite our paper](#cpm-color-pattern-makeup-transfer) whenever the dataset is employed to help produce published results.
 
 ---
 
@@ -51,11 +79,13 @@ conda env create -f environment.yml
 
 ##### Download pre-trained models
 
-- Download Makeup pretrained models from [Drive](https://drive.google.com/drive/folders/1dagiuultGgDd_QNikMTrNlmCmWEaFV_N?usp=sharing). They are `pattern.pth` and `color.pth`. Put them in `checkpoints` folder.
+- Download CPM's pretrained models: [color.pth](https://public.vinai.io/CPM_checkpoints/color.pth) and [pattern.pth](https://public.vinai.io/CPM_checkpoints/pattern.pth). Put them in `checkpoints` folder.
 
 - Download [PRNet pretrained model] from [Drive](https://drive.google.com/file/d/1UoE-XuW1SDLUjZmJPkIZ1MLxvQFgmTFH/view). Put it in `PRNet/net-data`
 
 ##### Usage
+
+➡️ *You can now try it in Google Colab [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9QVSHPJ8fx9X8yg6KnhE40PPlyW5iNp?usp=sharing)*
 
 ```sh
 # Color+Pattern: 
@@ -77,23 +107,6 @@ Result image will be saved in `result.png`
 
 ---
 
-### Datasets
-
-We introduce ✨ 4 new datasets: CPM-Real, CPM-Synt-1, CPM-Synt-2, and Stickers datasets. Besides, we also use published [LADN's Dataset](https://georgegu1997.github.io/LADN-project-page/) & [Makeup Transfer Dataset](http://liusi-group.com/projects/BeautyGAN).
-
-CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2 are build on [Makeup Transfer](http://liusi-group.com/projects/BeautyGAN) and Stickers.
-
-|    Name  						  | #imgs | Description						   | - 									|
-|:-------------------------------:|:-----:|:-----------------------------------|:----------------------------------:|
-|[CPM-Real](https://public.vinai.io/CPM-datasets/CPM-Real.zip)| 3895  | real - makeup styles 			   |![CPM-Real.png](./imgs/CPM-Real.png)|
-|[CPM-Synt-1](https://public.vinai.io/CPM-datasets/CPM-Synt-1.zip)| 5555| synthesis - makeup img with pattern segmentation mask|![./imgs/CPM-Synt-1.png](./imgs/CPM-Synt-1.png)|
-|[CPM-Synt-2](https://public.vinai.io/CPM-datasets/CPM-Synt-2.zip)| 1625| synthesis - triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
-|[Stickers](https://public.vinai.io/CPM-datasets/Stickers.zip)|577| high-quality images with alpha channel, used to create CPM-Synt-1 and CPM-Synt-2 |![Stickers.png](./imgs/Stickers.png)|
-
-*You can also download these datasets from [Google Drive](https://drive.google.com/drive/folders/19xjpzKf-dl0-uayiUsuM9ulYk4ER2Vsj?usp=sharing). Dataset Folder Structure can be found [here](https://github.com/VinAIResearch/CPM/blob/main/about-data.md).*
-
----
-
 ### Training and Evaluation
 
 
@@ -105,7 +118,11 @@ As stated in the paper, the Color Branch and Pattern Branch are totally independ
 
 Please redirect to [***Color Branch***](./Color) or [***Pattern Branch***](./Pattern) for further details.
 
-### Trouble Shooting
+---
+
+🌿 If you have trouble running the code, please read [Trouble Shooting](#trouble-shooting) before [creating an issue](https://github.com/VinAIResearch/CPM/issues). Thank you 🌿
+
+##### Trouble Shooting
 
 1. [Solved] `ImportError: libGL.so.1: cannot open shared object file: No such file or directory`:
 	```
@@ -113,8 +130,10 @@ Please redirect to [***Color Branch***](./Color) or [***Pattern Branch***](./Pat
 	sudo apt install libgl1-mesa-glx
 	```
 1. [Solved] `RuntimeError: Expected tensor for argument #1 'input' to have the same device as tensor for argument #2 'weight'; but device 1 does not equal 0 (while checking arguments for cudnn_convolution)`
-
-	Add CUDA VISIBLE DEVICES before .py. Ex: `CUDA_VISIBLE_DEVICES=0 python main.py`
+	Add CUDA VISIBLE DEVICES before .py. Ex:
+	```
+	CUDA_VISIBLE_DEVICES=0 python main.py
+	```
 1. [Solved] `RuntimeError: cuda runtime error (999) : unknown error at /opt/conda/conda-bld/pytorch_1595629403081/work/aten/src/THC/THCGeneral.cpp:47`
 
 	```
@@ -122,20 +141,6 @@ Please redirect to [***Color Branch***](./Color) or [***Pattern Branch***](./Pat
 	sudo modprobe nvidia_uvm
 	```
 
-### Citation
-
-If you use this code or incorporate it into other software, please consider citing:
-
-**Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer**. \
+<!-- **Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer**. \
 T. Nguyen, A. Tran, M. Hoai (2021) \
-IEEE Conference on Computer Vision and Pattern Recognition (CVPR).
-
-
-```
-@inproceedings{m_Nguyen-etal-CVPR21,
-  author = {Thao Nguyen and Anh Tran and Minh Hoai},
-  title = {Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer},
-  year = {2021},
-  booktitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition (CVPR)}
-}
-```
+IEEE Conference on Computer Vision and Pattern Recognition (CVPR). -->

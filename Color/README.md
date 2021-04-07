@@ -2,12 +2,12 @@
 
 | ![color-makeup.png](../imgs/color-makeup.png) | 
 |:--:| 
-| This is training guideline for Color Branch (C), one out of two branches in [Color-Pattern Makeup Transfer (CPM)](../README.md).|
+| This is a training guideline for Color Branch (C), one out of two branches in [Color-Pattern Makeup Transfer (CPM)](../README.md).|
 
 ---
 
 For Color Branch, we used the same CycleGAN-based model like [BeautyGAN](liusi-group.com/pdf/BeautyGAN-camera-ready_2.pdf).
-But instead of normal training pair, we used our **novel uv-space**.
+But instead of normal training pair, we used our **novel UV-space**.
 
 1. **Download [Makeup Transfer Dataset](http://liusi-group.com/projects/BeautyGAN)** & unzip it. The dataset folder should be like:
 
@@ -34,4 +34,4 @@ Result will be saved in `--savedir` folder. You should find image pair like this
 |:--:| 
 | From left to right: Segmentation Mask, UV-texture.|
 
-3. **Train Color Branch**: Follow instruction at [BeautyGAN-pytorch-reimplementation](https://github.com/thaoshibe/BeautyGAN-PyTorch-reimplementation) to re-train model with newly established dataset.
+3. **Train Color Branch**: Follow instruction at [BeautyGAN-pytorch-reimplementation](https://github.com/thaoshibe/BeautyGAN-PyTorch-reimplementation) or [BeautyGAN-pytorch-implementation](https://github.com/wtjiang98/BeautyGAN_pytorch) to re-train model with newly established dataset.

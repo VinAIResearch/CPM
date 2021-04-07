@@ -11,13 +11,14 @@
 
 - CPM is a holistic makeup transfer framework that outperforms previous state-of-the-art models on both light and extreme makeup styles.
 - CPM consists of an improved color transfer branch (based on [BeautyGAN](http://www.colalab.org/projects/BeautyGAN)) and a novel pattern transfer branch.
-- The datasets used to train and evaluate CPM contains both real and synthetic, light and extreme examples.
+- We also introduce 4 new datasets (both real and synthesis) to train and evaluate CPM.
+
 
 | ![teaser.png](./imgs/teaser.png) |
 |:--:|
 | *CPM can replicate **both colors and patterns** from a reference makeup style to another image.*|
 
-Details of the dataset construction, model architecture and experimental results can be found in [our following paper](https://arxiv.org/abs/2104.01867):
+Details of the dataset construction, model architecture, and experimental results can be found in [our following paper](https://arxiv.org/abs/2104.01867):
 
 ```
 @inproceedings{m_Nguyen-etal-CVPR21,
@@ -27,7 +28,7 @@ Details of the dataset construction, model architecture and experimental results
   booktitle = {Proceedings of the {IEEE} Conference on Computer Vision and Pattern Recognition (CVPR)}
 }
 ```
-**Please CITE** our paper whenever our dataset or model implementation is used to help produce published results or incorporated into other software.
+**Please CITE** our paper whenever our datasets or model implementation is used to help produce published results or incorporated into other software.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9QVSHPJ8fx9X8yg6KnhE40PPlyW5iNp?usp=sharing) - [![arXiv](https://img.shields.io/badge/arXiv-2104.01867-red.svg)](https://arxiv.org/abs/2104.01867) - [![project page](https://img.shields.io/badge/ProjectPage-up-green.svg)](https://thaoshibe.github.io/CPM)
 
@@ -37,21 +38,21 @@ Details of the dataset construction, model architecture and experimental results
 
 We introduce ✨ 4 new datasets: **CPM-Real**, **CPM-Synt-1**, **CPM-Synt-2**, and **Stickers** datasets. Besides, we also use published [LADN's Dataset](https://georgegu1997.github.io/LADN-project-page/) & [Makeup Transfer Dataset](http://liusi-group.com/projects/BeautyGAN).
 
-CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2 are build on [Makeup Transfer](http://liusi-group.com/projects/BeautyGAN) and Stickers. *(Click on dataset name to download)*
+CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2 are built on [Makeup Transfer](http://liusi-group.com/projects/BeautyGAN) and Stickers. *(Click on dataset name to download)*
 
 |    Name  						  | #imgs | Description						   | - 									|
 |:-------------------------------:|:-----:|:-----------------------------------|:----------------------------------:|
 |[CPM-Real](https://public.vinai.io/CPM-datasets/CPM-Real.zip)| 3895  | real - makeup styles 			   |![CPM-Real.png](./imgs/CPM-Real.png)|
-|[CPM-Synt-1](https://public.vinai.io/CPM-datasets/CPM-Synt-1.zip)| 5555| synthesis - makeup img with pattern segmentation mask|![./imgs/CPM-Synt-1.png](./imgs/CPM-Synt-1.png)|
+|[CPM-Synt-1](https://public.vinai.io/CPM-datasets/CPM-Synt-1.zip)| 5555| synthesis - makeup images with pattern segmentation mask|![./imgs/CPM-Synt-1.png](./imgs/CPM-Synt-1.png)|
 |[CPM-Synt-2](https://public.vinai.io/CPM-datasets/CPM-Synt-2.zip)| 1625| synthesis - triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
-|[Stickers](https://public.vinai.io/CPM-datasets/Stickers.zip)|577| high-quality images with alpha channel, used to create CPM-Synt-1 and CPM-Synt-2 |![Stickers.png](./imgs/Stickers.png)|
+|[Stickers](https://public.vinai.io/CPM-datasets/Stickers.zip)|577| high-quality images with alpha channel |![Stickers.png](./imgs/Stickers.png)|
 
 *Dataset Folder Structure can be found [here](https://github.com/VinAIResearch/CPM/blob/main/about-data.md).*
-> ***By downloading these dataset, USER agrees:***
+> ***By downloading these datasets, USER agrees:***
 > 
-> * to use the dataset for research or educational purposes only
-> * to not distribute or part of the dataset in any original or modified form.
-> * and to [cite our paper](#cpm-color-pattern-makeup-transfer) whenever the dataset is employed to help produce published results.
+> * to use these datasets for research or educational purposes only
+> * to not distribute or part of these datasets in any original or modified form.
+> * and to [cite our paper](#cpm-color-pattern-makeup-transfer) whenever these datasets are employed to help produce published results.
 
 ---
 
@@ -77,9 +78,9 @@ conda env create -f environment.yml
 
 ##### Download pre-trained models
 
-- Download CPM's pretrained models: [color.pth](https://public.vinai.io/CPM_checkpoints/color.pth) and [pattern.pth](https://public.vinai.io/CPM_checkpoints/pattern.pth). Put them in `checkpoints` folder.
+- Download CPM’s pre-trained models: [color.pth](https://public.vinai.io/CPM_checkpoints/color.pth) and [pattern.pth](https://public.vinai.io/CPM_checkpoints/pattern.pth). Put them in `checkpoints` folder.
 
-- Download [PRNet pretrained model] from [Drive](https://drive.google.com/file/d/1UoE-XuW1SDLUjZmJPkIZ1MLxvQFgmTFH/view). Put it in `PRNet/net-data`
+- Download [PRNet pre-trained model] from [Drive](https://drive.google.com/file/d/1UoE-XuW1SDLUjZmJPkIZ1MLxvQFgmTFH/view). Put it in `PRNet/net-data`
 
 ##### Usage
 

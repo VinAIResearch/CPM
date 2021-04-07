@@ -2,9 +2,7 @@
 
 | ![pattern_segmentation.png](../imgs/pattern_segmentation.png) | 
 |:--:| 
-| Pattern Makeup | Pattern Segmentation Model|
-
-This is training guideline for Pattern Branch (P), one out of two branches in [Color-Pattern Makeup Transfer (CPM)](../README.md).
+| This is a training guideline for Pattern Branch (P), one out of two branches in [Color-Pattern Makeup Transfer (CPM)](../README.md)|
 
 ---
 

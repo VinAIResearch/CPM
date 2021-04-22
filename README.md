@@ -80,6 +80,13 @@ conda env create -f environment.yml
 
 - Download CPM’s pre-trained models: [color.pth](https://public.vinai.io/CPM_checkpoints/color.pth) and [pattern.pth](https://public.vinai.io/CPM_checkpoints/pattern.pth). Put them in `checkpoints` folder.
 
+```sh
+mkdir checkpoints
+cd checkpoints
+wget https://public.vinai.io/CPM_checkpoints/color.pth
+wget https://public.vinai.io/CPM_checkpoints/pattern.pth
+```
+
 - Download [PRNet pre-trained model] from [Drive](https://drive.google.com/file/d/1UoE-XuW1SDLUjZmJPkIZ1MLxvQFgmTFH/view). Put it in `PRNet/net-data`
 
 ##### Usage

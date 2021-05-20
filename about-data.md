@@ -52,13 +52,13 @@ CPM-Synt-1
 	└───seg
 		│{name1}.png
 		│...
-└───train
+└───test
 	└───img
 		│{name1}.png
 		|...
 	└───seg
-		│	{name1}.png
-		│	...
+		│{name1}.png
+		│...
 └───txt
 	│test_face.txt
 	│test_stick.txt
@@ -83,8 +83,8 @@ CPM-Synt-2
 		│{name1}_with_pattxxx.png
 		|...
 	└───segs
-		│	{name1}_with_pattxxx.png
-		│	...
+		│{name1}_with_pattxxx.png
+		│...
 ```
 
 ![CPM-Synt-2-folder.png](./imgs/CPM-Synt-2-folder.png)

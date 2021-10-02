@@ -13,7 +13,7 @@
 - CPM consists of an improved color transfer branch (based on [BeautyGAN](http://www.colalab.org/projects/BeautyGAN)) and a novel pattern transfer branch.
 - We also introduce 4 new datasets (both real and synthesis) to train and evaluate CPM.
 
-
+📢 **New**: We provide [❝Qualitative Performane Comparisons❞](https://thaoshibe.github.io/CPM#qualitative-result) online! Check it out!
 | ![teaser.png](./imgs/teaser.png) |
 |:--:|
 | *CPM can replicate **both colors and patterns** from a reference makeup style to another image.*|

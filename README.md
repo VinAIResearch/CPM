@@ -51,7 +51,7 @@ CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2
 > ***By downloading these datasets, USER agrees:***
 > 
 > * to use these datasets for research or educational purposes only
-> * to not distribute or part of these datasets in any original or modified form.
+> * to not distribute the datasets or part of the datasets in any original or modified form.
 > * and to [cite our paper](#cpm-color-pattern-makeup-transfer) whenever these datasets are employed to help produce published results.
 
 ---

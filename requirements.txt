@@ -1,4 +1,4 @@
-albumentations==0.5.2
+albumentations>=0.5.1,<=0.5.2
 blend-modes==2.1.0
 dlib
 dominate==2.6.0

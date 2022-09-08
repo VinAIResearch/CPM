@@ -150,3 +150,8 @@ Please redirect to [***Color Branch***](./Color) or [***Pattern Branch***](./Pat
 <!-- **Lipstick ain't enough: Beyond Color Matching for In-the-Wild Makeup Transfer**. \
 T. Nguyen, A. Tran, M. Hoai (2021) \
 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). -->
+
+##### Docker file 
+```
+docker build -t name .
+```

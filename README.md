@@ -42,10 +42,10 @@ CPM-Real and Stickers are crawled from Google Image Search, while CPM-Synt-1 & 2
 
 |    Name  						  | #imgs | Description						   | - 									|
 |:-------------------------------:|:-----:|:-----------------------------------|:----------------------------------:|
-|[CPM-Real](https://public.vinai.io/CPM-datasets/CPM-Real.zip)| 3895  | real - makeup styles 			   |![CPM-Real.png](./imgs/CPM-Real.png)|
-|[CPM-Synt-1](https://public.vinai.io/CPM-datasets/CPM-Synt-1.zip)| 5555| synthesis - makeup images with pattern segmentation mask|![./imgs/CPM-Synt-1.png](./imgs/CPM-Synt-1.png)|
-|[CPM-Synt-2](https://public.vinai.io/CPM-datasets/CPM-Synt-2.zip)| 1625| synthesis - triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
-|[Stickers](https://public.vinai.io/CPM-datasets/Stickers.zip)|577| high-quality images with alpha channel |![Stickers.png](./imgs/Stickers.png)|
+|[CPM-Real](https://drive.google.com/file/d/1ZptMVZ-d2VmEVtNpUpvagnaG7vYgJn5d/view?usp=sharing)| 3895  | real - makeup styles 			   |![CPM-Real.png](./imgs/CPM-Real.png)|
+|[CPM-Synt-1](https://drive.google.com/file/d/10U8Q-u4frfxmvqlzWTCUtc6rR6-weMbb/view?usp=sharing)| 5555| synthesis - makeup images with pattern segmentation mask|![./imgs/CPM-Synt-1.png](./imgs/CPM-Synt-1.png)|
+|[CPM-Synt-2](https://drive.google.com/file/d/1f-WRRWzrMSbnLCNlDY3agr-YRKgyqaFy/view?usp=sharing)| 1625| synthesis - triplets: makeup, non-makeup, ground-truth|![./imgs/CPM-Synt-2.png](./imgs/CPM-Synt-2.png)|
+|[Stickers](https://drive.google.com/file/d/11_9cqTLawZPxeN3ZlHt_4yQerR3ErhQa/view?usp=sharing)|577| high-quality images with alpha channel |![Stickers.png](./imgs/Stickers.png)|
 
 *Dataset Folder Structure can be found [here](https://github.com/VinAIResearch/CPM/blob/main/about-data.md).*
 > ***By downloading these datasets, USER agrees:***
@@ -78,14 +78,7 @@ conda env create -f environment.yml
 
 ##### Download pre-trained models
 
-- Download CPM’s pre-trained models: [color.pth](https://public.vinai.io/CPM_checkpoints/color.pth) and [pattern.pth](https://public.vinai.io/CPM_checkpoints/pattern.pth). Put them in `checkpoints` folder.
-
-```sh
-mkdir checkpoints
-cd checkpoints
-wget https://public.vinai.io/CPM_checkpoints/color.pth
-wget https://public.vinai.io/CPM_checkpoints/pattern.pth
-```
+- Download CPM’s pre-trained models: [color.pth](https://drive.google.com/file/d/1xeJ26CrIDLgDvocqEtedVGgdd36dmmCx/view?usp=sharing) and [pattern.pth](https://drive.google.com/file/d/1ciy8INrxMQufDodT4a89KxrpZn4le4ud/view?usp=sharing). Put them in `checkpoints` folder.
 
 - Download [PRNet pre-trained model] from [Drive](https://drive.google.com/file/d/1UoE-XuW1SDLUjZmJPkIZ1MLxvQFgmTFH/view). Put it in `PRNet/net-data`
 
